@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "198847901280",
+    "project_id": "recetasfitproject",
+    "storage_bucket": "recetasfitproject.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:198847901280:android:06a0bb2ce59b5c835edd05",
+        "android_client_info": {
+          "package_name": "com.recetasfit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "198847901280-rhrmf4ev07ni6jho8he4sq7pddnulmgo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.recetasfit",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "198847901280-okcr3tkrffoc4jkbfn16eddp9aeugoj2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLIedY0PftgK8iaXGaUwLXe8jtqqnx44M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "198847901280-okcr3tkrffoc4jkbfn16eddp9aeugoj2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
