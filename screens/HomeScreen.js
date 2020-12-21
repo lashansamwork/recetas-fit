@@ -9,23 +9,25 @@ import {
   KeyboardAvoidingView,
 } from 'react-native';
 import database from '@react-native-firebase/database';
-
-const reference = database().ref('/codes/').once('value');
-
-reference.then((snapshot) => {
-  console.log('Codes from DB: ', snapshot.val());
-});
+import Toast from 'react-native-simple-toast';
 
 function HomeScreen({navigation}) {
   const [code, setCode] = useState('');
   const handleCode = () => {
+    const reference = database().ref('/codes/').once('value');
     reference.then((snapshot) => {
-      snapshot.val().map((key) => {
+      const codesObject = snapshot.val();
+      let codesArray = Object.keys(codesObject).map((k) => codesObject[k]);
+      console.log('snapshot values: ', codesArray);
+
+      codesArray.map((key) => {
         console.log('each code', key);
         console.log('comparing ', key, typeof key, ' to code ', typeof code);
         if (code === key) {
           console.log('key correct!');
           navigation.navigate('Recetas Fit');
+          //   } else {
+          //     Toast.show('This is a toast.');
         }
       });
     });
@@ -147,7 +149,8 @@ const styles = StyleSheet.create({
   view5: {
     flex: 2,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
+    paddingTop: 15,
   },
 });
 
