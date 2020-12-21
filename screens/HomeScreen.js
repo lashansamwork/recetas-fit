@@ -26,8 +26,8 @@ function HomeScreen({navigation}) {
         if (code === key) {
           console.log('key correct!');
           navigation.navigate('Recetas Fit');
-          //   } else {
-          //     Toast.show('This is a toast.');
+        } else {
+          Toast.show('Please check the validation code again and try again.');
         }
       });
     });
