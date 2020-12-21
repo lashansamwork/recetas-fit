@@ -11,9 +11,9 @@ const Stack = createStackNavigator();
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Code">
-        <Stack.Screen name="Code" component={HomeScreen} />
-        <Stack.Screen name="Book" component={BookScreen} />
+      <Stack.Navigator initialRouteName="Welcome">
+        <Stack.Screen name="Welcome" component={HomeScreen} />
+        <Stack.Screen name="Recetas Fit" component={BookScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
