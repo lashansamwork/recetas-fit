@@ -14,22 +14,29 @@ import Toast from 'react-native-simple-toast';
 function HomeScreen({navigation}) {
   const [code, setCode] = useState('');
   const handleCode = () => {
+    let isNavigationCompleted = false;
+    console.log('show toast = ' + isNavigationCompleted + ' at line 18');
     const reference = database().ref('/codes/').once('value');
+    console.log(reference);
     reference.then((snapshot) => {
       const codesObject = snapshot.val();
       let codesArray = Object.keys(codesObject).map((k) => codesObject[k]);
       console.log('snapshot values: ', codesArray);
-
       codesArray.map((key) => {
-        console.log('each code', key);
         console.log('comparing ', key, typeof key, ' to code ', typeof code);
         if (code === key) {
+          console.log('showToast = ' + isNavigationCompleted + ' line 28');
           console.log('key correct!');
           navigation.navigate('Recetas Fit');
-        } else {
-          Toast.show('Please check the validation code again and try again.');
+          isNavigationCompleted = true;
         }
       });
+      console.log('check after nav');
+      if (isNavigationCompleted === false) {
+        console.log('showToast = ' + isNavigationCompleted + ' at line 35');
+        Toast.show('Please check the validation code again and try again.');
+        console.log('line 36');
+      }
     });
   };
   return (
