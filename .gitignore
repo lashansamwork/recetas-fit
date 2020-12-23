@@ -57,3 +57,6 @@ buck-out/
 
 # CocoaPods
 /ios/Pods/
+
+# PDF Books
+./assets/RecetasFit.pdf 

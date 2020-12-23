@@ -3,17 +3,19 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import HomeScreen from './screens/HomeScreen';
-import BookScreen from './screens/BookScreen';
+import HomeScreen from './screens/ValidationScreen';
+import BookScreen from './screens/BooksScreen';
+import WelcomeScreen from './screens/WelcomeScreen';
 
 const Stack = createStackNavigator();
 
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Welcome">
-        <Stack.Screen name="Welcome" component={HomeScreen} />
-        <Stack.Screen name="Recetas Fit" component={BookScreen} />
+      <Stack.Navigator initialRouteName="Recetas Fit">
+        <Stack.Screen name="Recetas Fit" component={WelcomeScreen} />
+        <Stack.Screen name="Validation" component={HomeScreen} />
+        <Stack.Screen name="View My Books" component={BookScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
