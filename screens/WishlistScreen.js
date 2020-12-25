@@ -9,19 +9,19 @@ const WishlistScreen = () => {
   return (
     <View style={styles.container}>
       <ActionButton buttonColor="rgba(231,76,60,1)">
-        <View>
-          <ActionButton.Item
-            buttonColor="#9b59b6"
-            title="New Task"
-            onPress={() => console.log('notes tapped!')}>
-            <Icon name="md-create" style={styles.actionButtonIcon} />
-          </ActionButton.Item>
-        </View>
         <View style={styles.view1}>
           <Text style={styles.text1}> WishlistScreen </Text>
         </View>
         <View style={styles.view2}>
           <WishlistItem title="testItem" quantity="2kg" />
+        </View>
+        <View style={styles.view4}>
+          <ActionButton.Item
+            buttonColor="#9b59b6"
+            title="Add"
+            onPress={() => console.log('notes tapped!')}>
+            <Icon name="md-create" style={styles.actionButtonIcon} />
+          </ActionButton.Item>
         </View>
       </ActionButton>
     </View>
@@ -45,6 +45,9 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'red',
     paddingHorizontal: 20,
+  },
+  view4: {
+    borderWidth: 1,
   },
   text1: {
     fontSize: 30,
