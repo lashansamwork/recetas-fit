@@ -1,6 +1,8 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
+import WishlistItem from '../components/WishlistItem';
+
 const WishlistScreen = () => {
   return (
     <View style={styles.container}>
@@ -8,7 +10,7 @@ const WishlistScreen = () => {
         <Text style={styles.text1}> WishlistScreen </Text>
       </View>
       <View style={styles.view2}>
-        <Text>List items</Text>
+        <WishlistItem title="testItem" quantity="2kg" />
       </View>
     </View>
   );
@@ -20,16 +22,17 @@ const styles = StyleSheet.create({
     backgroundColor: '#efefef',
   },
   view1: {
-    flex: 1,
+    flexShrink: 1,
     borderWidth: 1,
     borderColor: 'red',
     alignItems: 'center',
     justifyContent: 'center',
   },
   view2: {
-    flex: 8,
+    flexGrow: 1,
     borderWidth: 1,
     borderColor: 'red',
+    paddingHorizontal: 20,
   },
   text1: {
     fontSize: 30,
