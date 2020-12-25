@@ -6,7 +6,6 @@ import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from './screens/ValidationScreen';
 import BookScreen from './screens/BooksScreen';
 import WelcomeScreen from './screens/WelcomeScreen';
-import BooklistScreen from './screens/BooklistScreen';
 
 const Stack = createStackNavigator();
 
