@@ -1,5 +1,12 @@
-import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import React, {useState} from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+  Modal,
+  TouchableHighlight,
+  TextInput,
+} from 'react-native';
 import ActionButton from 'react-native-action-button';
 import {FlatList} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -7,6 +14,8 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import WishlistItem from '../components/WishlistItem';
 
 const WishlistScreen = () => {
+  const [modalVisible, setModalVisible] = useState(false);
+
   const data = [
     {
       title: 'apple',
@@ -28,6 +37,23 @@ const WishlistScreen = () => {
 
   return (
     <View style={styles.container}>
+      <Modal animationType="slide" transparent={true} visible={modalVisible}>
+        <View style={styles.view3}>
+          <View style={styles.view4}>
+            <Text>Add your grocery item</Text>
+            <TextInput/>
+            <TextInput/>
+            <TouchableHighlight
+              title="save"
+              style={styles.touchable1}
+              onPress={() => {
+                setModalVisible(!modalVisible);
+              }}>
+              <Text style={styles.text1}>Save</Text>
+            </TouchableHighlight>
+          </View>
+        </View>
+      </Modal>
       <View style={styles.view2}>
         <FlatList
           data={data}
@@ -42,7 +68,7 @@ const WishlistScreen = () => {
         buttonColor="rgba(231,76,60,1)"
         title="Add"
         useNativeFeedback={true}
-        onPress={() => console.log('notes tapped!')}
+        onPress={() => setModalVisible()}
       />
     </View>
   );
@@ -67,13 +93,45 @@ const styles = StyleSheet.create({
     borderColor: 'red',
     paddingHorizontal: 20,
   },
+  view3: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 22,
+  },
+  view4: {
+    margin: 20,
+    width: '90%',
+    backgroundColor: 'white',
+    borderRadius: 20,
+    padding: 35,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
   text1: {
-    fontSize: 30,
+    alignSelf: 'center',
+    fontSize: 16,
     color: '#595959',
   },
   actionButtonIcon: {
     fontSize: 20,
     height: 22,
+  },
+  touchable1: {
+    height: 36,
+    width: '90%',
+    backgroundColor: 'lightblue',
+    borderRadius: 20,
+    padding: 10,
+    elevation: 2,
+    justifyContent: 'center',
   },
 });
 
