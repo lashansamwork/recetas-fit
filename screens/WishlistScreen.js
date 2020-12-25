@@ -6,6 +6,20 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import WishlistItem from '../components/WishlistItem';
 
 const WishlistScreen = () => {
+  const Data = [
+    {
+      title: 'apple',
+      quantity: '2kg',
+    },
+    {
+      title: 'orange',
+      quantity: '1kg',
+    },
+    {
+      title: 'pineapple',
+      quantity: '5kg',
+    },
+  ];
   return (
     <View style={styles.container}>
       <View style={styles.view2}>
