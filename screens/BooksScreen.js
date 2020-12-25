@@ -55,6 +55,9 @@ function BookScreen() {
             <Text style={styles.text1}>{'>'}</Text>
           </TouchableOpacity>
         </View>
+        <View>
+          <Text style={{color:'white'}}>Zoom</Text>
+        </View>
       </View>
     </View>
   );

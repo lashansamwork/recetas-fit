@@ -27,7 +27,7 @@ function HomeScreen({navigation}) {
         if (code === key) {
           console.log('showToast = ' + isNavigationCompleted + ' line 28');
           console.log('key correct!');
-          navigation.navigate('View My Books');
+          navigation.navigate('Read');
           isNavigationCompleted = true;
         }
       });

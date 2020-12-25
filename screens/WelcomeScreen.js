@@ -1,7 +1,16 @@
-import React from 'react';
-import {StyleSheet, View, Text, Image, TouchableOpacity} from 'react-native';
+import React, {useRef} from 'react';
+import ListItem from '../components/ListItem';
+import {
+  StyleSheet,
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  Button,
+} from 'react-native';
 
 function WelcomeScreen({navigation}) {
+
   function onContinueBtnFn() {
     navigation.navigate('Validation');
   }
@@ -43,7 +52,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: '#CB5066',
+    backgroundColor: '#efefef',
     justifyContent: 'center',
     alignItems: 'flex-end',
     //borderColor: 'purple',
@@ -59,9 +68,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   view2: {
-    flex: 4,
-    //borderColor: 'green',
-    //borderWidth: 3,
+    flex: 8,
+    borderColor: 'green',
+    borderWidth: 3,
     //backgroundColor: 'green',
     width: '100%',
     justifyContent: 'center',
@@ -88,7 +97,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   text1: {
-    color: 'white',
+    color: '#595959',
     alignSelf: 'center',
     fontSize: 21,
     fontWeight: 'bold',
