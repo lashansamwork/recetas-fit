@@ -13,11 +13,9 @@ const Stack = createStackNavigator();
 function App() {
   return (
     <NavigationContainer>
-      {/* <Stack.Navigator initialRouteName="Rectas Fit">
+      <Stack.Navigator initialRouteName="My Wishlist">
         <Stack.Screen name="Recetas Fit" component={WelcomeScreen} />
         <Stack.Screen name="Validation" component={HomeScreen} />
-      </Stack.Navigator> */}
-      <Stack.Navigator>
         <Stack.Screen name="Read" component={BookScreen} />
         <Stack.Screen name="My Wishlist" component={WishlistScreen} />
       </Stack.Navigator>
