@@ -6,17 +6,20 @@ import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from './screens/ValidationScreen';
 import BookScreen from './screens/BooksScreen';
 import WelcomeScreen from './screens/WelcomeScreen';
-import BooklistScreen from './screens/BooklistScreen';
+import WishlistScreen from './screens/WishlistScreen';
 
 const Stack = createStackNavigator();
 
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="BookScreen">
+      {/* <Stack.Navigator initialRouteName="Rectas Fit">
         <Stack.Screen name="Recetas Fit" component={WelcomeScreen} />
         <Stack.Screen name="Validation" component={HomeScreen} />
+      </Stack.Navigator> */}
+      <Stack.Navigator>
         <Stack.Screen name="Read" component={BookScreen} />
+        <Stack.Screen name="My Wishlist" component={WishlistScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
