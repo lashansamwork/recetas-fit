@@ -8,21 +8,16 @@ import WishlistItem from '../components/WishlistItem';
 const WishlistScreen = () => {
   return (
     <View style={styles.container}>
-      <ActionButton buttonColor="rgba(231,76,60,1)">
-        <View style={styles.view1}>
-          <Text style={styles.text1}> WishlistScreen </Text>
-        </View>
-        <View style={styles.view2}>
-          <WishlistItem title="testItem" quantity="2kg" />
-        </View>
-        <View style={styles.view4}>
-          <ActionButton.Item
-            buttonColor="#9b59b6"
-            title="Add"
-            onPress={() => console.log('notes tapped!')}>
-            <Icon name="md-create" style={styles.actionButtonIcon} />
-          </ActionButton.Item>
-        </View>
+      <View style={styles.view2}>
+        <WishlistItem title="testItem" quantity="2kg" />
+      </View>
+      <ActionButton
+        buttonColor="rgba(231,76,60,1)"
+        title="Add"
+        useNativeFeedback={true}
+        onPress={() => console.log('notes tapped!')}>
+        {/* <View style={styles.view4}>
+        </View> */}
       </ActionButton>
     </View>
   );
@@ -32,6 +27,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#efefef',
+    borderWidth: 1,
   },
   view1: {
     flexShrink: 1,
@@ -52,6 +48,10 @@ const styles = StyleSheet.create({
   text1: {
     fontSize: 30,
     color: '#595959',
+  },
+  actionButtonIcon: {
+    fontSize: 20,
+    height: 22,
   },
 });
 
