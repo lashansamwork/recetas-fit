@@ -1,12 +1,13 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import ActionButton from 'react-native-action-button';
+import {FlatList} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import WishlistItem from '../components/WishlistItem';
 
 const WishlistScreen = () => {
-  const Data = [
+  const data = [
     {
       title: 'apple',
       quantity: '2kg',
@@ -20,19 +21,29 @@ const WishlistScreen = () => {
       quantity: '5kg',
     },
   ];
+
+  const renderItem = ({item}) => {
+    return <WishlistItem title={item.title} quantity={item.quantity} />;
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.view2}>
-        <WishlistItem title="testItem" quantity="2kg" />
+        <FlatList
+          data={data}
+          renderItem={renderItem}
+          keyExtractor={(item, index) => {
+            console.log('printing item ', item, ' and ', index);
+            return `${index}`;
+          }}
+        />
       </View>
       <ActionButton
         buttonColor="rgba(231,76,60,1)"
         title="Add"
         useNativeFeedback={true}
-        onPress={() => console.log('notes tapped!')}>
-        {/* <View style={styles.view4}>
-        </View> */}
-      </ActionButton>
+        onPress={() => console.log('notes tapped!')}
+      />
     </View>
   );
 };
@@ -55,9 +66,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'red',
     paddingHorizontal: 20,
-  },
-  view4: {
-    borderWidth: 1,
   },
   text1: {
     fontSize: 30,
