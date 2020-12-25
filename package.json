@@ -20,6 +20,7 @@
     "@react-navigation/stack": "^5.12.8",
     "react": "16.13.1",
     "react-native": "0.63.4",
+    "react-native-action-button": "^2.8.5",
     "react-native-gesture-handler": "^1.9.0",
     "react-native-pdf": "^6.2.2",
     "react-native-reanimated": "^1.13.2",
