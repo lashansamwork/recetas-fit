@@ -10,6 +10,7 @@ import {
 import ActionButton from 'react-native-action-button';
 import {FlatList} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { Button } from 'react-native-paper';
 
 import WishlistItem from '../components/WishlistItem';
 
