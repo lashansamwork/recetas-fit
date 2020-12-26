@@ -10,9 +10,11 @@ import {
 } from 'react-native';
 import database from '@react-native-firebase/database';
 import Toast from 'react-native-simple-toast';
+import { AuthContext } from '../context-store/AuthContextProvider'
 
 function HomeScreen({navigation}) {
   const [code, setCode] = useState('');
+  const { signIn } = React.useContext(AuthContext);
   const handleCode = () => {
     let isNavigationCompleted = false;
     console.log('show toast = ' + isNavigationCompleted + ' at line 18');
@@ -27,7 +29,7 @@ function HomeScreen({navigation}) {
         if (code === key) {
           console.log('showToast = ' + isNavigationCompleted + ' line 28');
           console.log('key correct!');
-          navigation.navigate('Read');
+          signIn();
           isNavigationCompleted = true;
         }
       });
@@ -57,6 +59,8 @@ function HomeScreen({navigation}) {
       </View>
       <View style={styles.view4}>
         <TextInput
+          autoCapitalize='none'
+          autoCompleteType='off'
           style={styles.textInput}
           placeholder="Verification code"
           onChangeText={(val) => setCode(val)}
