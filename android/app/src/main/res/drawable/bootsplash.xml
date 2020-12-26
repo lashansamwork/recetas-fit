@@ -6,4 +6,7 @@
     <item>
         <bitmap android:src="@mipmap/bootsplash_logo" android:gravity="center" />
     </item>
+    <item android:gravity="bottom" android:bottom="100dp">
+        <bitmap android:src="@mipmap/logo_text" android:gravity="center" />
+    </item>
 </layer-list>
