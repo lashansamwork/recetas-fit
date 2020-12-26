@@ -27,7 +27,7 @@ function HomeScreen({navigation}) {
         if (code === key) {
           console.log('showToast = ' + isNavigationCompleted + ' line 28');
           console.log('key correct!');
-          navigation.navigate('Read');
+          navigation.navigate('HomeNavigator');
           isNavigationCompleted = true;
         }
       });
