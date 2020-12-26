@@ -1,7 +1,7 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
+import RNBootSplash from "react-native-bootsplash";
 const AuthContext = React.createContext();
 
 
@@ -38,7 +38,9 @@ function AuthContextProvider({ children }) {
                 console.log('tadaa...')
                 dispatch({ type: 'SIGN_IN' });
             }
-            
+
+            RNBootSplash.hide({ fade: true });
+            console.log("Bootsplash has been hidden successfully");
         };
 
         bootstrapAsync();
