@@ -14,23 +14,26 @@ import { Button } from 'react-native-paper';
 
 import WishlistItem from '../components/WishlistItem';
 
+const data = [
+  {
+    title: 'apple',
+    quantity: '2kg',
+  },
+  {
+    title: 'orange',
+    quantity: '1kg',
+  },
+  {
+    title: 'pineapple',
+    quantity: '5kg',
+  },
+];
+
 const WishlistScreen = () => {
   const [modalVisible, setModalVisible] = useState(false);
-
-  const data = [
-    {
-      title: 'apple',
-      quantity: '2kg',
-    },
-    {
-      title: 'orange',
-      quantity: '1kg',
-    },
-    {
-      title: 'pineapple',
-      quantity: '5kg',
-    },
-  ];
+  const [wishlistArr, setwishlistArr] = useState(data);
+  const [textInput2Value, setTextInput2Value] = useState(null);
+  const [textInput3Value, setTextInput3Value] = useState(null);
 
   const renderItem = ({item}) => {
     return <WishlistItem title={item.title} quantity={item.quantity} />;
@@ -41,23 +44,71 @@ const WishlistScreen = () => {
       <Modal animationType="slide" transparent={true} visible={modalVisible}>
         <View style={styles.view3}>
           <View style={styles.view4}>
-            <Text>Add your grocery item</Text>
-            <TextInput/>
-            <TextInput/>
-            <TouchableHighlight
-              title="save"
-              style={styles.touchable1}
-              onPress={() => {
-                setModalVisible(!modalVisible);
-              }}>
-              <Text style={styles.text1}>Save</Text>
-            </TouchableHighlight>
+            <View style={styles.view9}>
+              <View style={styles.view5}>
+                <Text>Add your grocery item</Text>
+              </View>
+              <View style={styles.view6}>
+                <TextInput
+                  style={styles.textInput2}
+                  onChangeText={(value) => {
+                    setTextInput2Value(value);
+                  }}
+                />
+              </View>
+              <View style={styles.view7}>
+                <TextInput
+                  keyboardType="decimal-pad"
+                  style={styles.textInput3}
+                  onChangeText={(value) => {
+                    setTextInput3Value(value);
+                  }}
+                />
+              </View>
+              <View style={styles.view8}>
+                {/* <TouchableHighlight
+                  title="save"
+                  style={styles.touchable1}
+                  onPress={() => console.log('ok')}
+                  onPress={() => {
+                    setModalVisible();
+
+                    setwishlistArr(
+                      wishlistArr.push({textInput2Value, textInput3Value}),
+                    );
+                  }
+                > */}
+
+                <TouchableHighlight
+                  style={styles.touchable1}
+                  onPress={() => {
+                    setModalVisible(!modalVisible);
+                    console.log('save button pressed');
+                    console.log(
+                      '🚀 ~ file: WishlistScreen.js ~ line 70 ~ WishlistScreen ~ textInput2Value',
+                      textInput2Value,
+                    );
+                    console.log(
+                      '🚀 ~ file: WishlistScreen.js ~ line 71 ~ WishlistScreen ~ textInput3Value',
+                      textInput3Value,
+                    );
+                    const newValue = {title: textInput2Value, quantity: textInput3Value};
+                    setwishlistArr([...wishlistArr, newValue]);
+                    console.log(
+                      '🚀 ~ file: WishlistScreen.js ~ line 71 ~ WishlistScreen ~ wishlistArr',
+                      wishlistArr,
+                    );
+                  }}>
+                  <Text style={styles.text1}>Save</Text>
+                </TouchableHighlight>
+              </View>
+            </View>
           </View>
         </View>
       </Modal>
       <View style={styles.view2}>
         <FlatList
-          data={data}
+          data={wishlistArr}
           renderItem={renderItem}
           keyExtractor={(item, index) => {
             console.log('printing item ', item, ' and ', index);
@@ -69,7 +120,7 @@ const WishlistScreen = () => {
         buttonColor="rgba(231,76,60,1)"
         title="Add"
         useNativeFeedback={true}
-        onPress={() => setModalVisible()}
+        onPress={() => setModalVisible(true)}
       />
     </View>
   );
@@ -90,8 +141,8 @@ const styles = StyleSheet.create({
   },
   view2: {
     flexGrow: 1,
-    borderWidth: 1,
-    borderColor: 'red',
+    // borderWidth: 1,
+    // borderColor: 'red',
     paddingHorizontal: 20,
   },
   view3: {
@@ -99,13 +150,16 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 22,
+    // borderColor: 'orange',
+    // borderWidth: 1,
   },
   view4: {
+    flexShrink: 1,
     margin: 20,
     width: '90%',
     backgroundColor: 'white',
     borderRadius: 20,
-    padding: 35,
+    padding: 5,
     alignItems: 'center',
     shadowColor: '#000',
     shadowOffset: {
@@ -115,9 +169,61 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
+    // borderColor: 'orange',
+    borderWidth: 1,
+  },
+  view5: {
+    flexShrink: 1,
+    paddingVertical: 5,
+    paddingBottom: 15,
+    width: '90%',
+    // borderColor: 'blue',
+    // borderWidth: 1,
+
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  view6: {
+    flexShrink: 1,
+    paddingVertical: 5,
+    width: '90%',
+    // borderColor: 'red',
+    // borderWidth: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  view7: {
+    flexShrink: 1,
+
+    paddingVertical: 5,
+    width: '90%',
+    // borderColor: 'red',
+    // borderWidth: 1,
+
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  view8: {
+    flexShrink: 1,
+    paddingVertical: 5,
+    paddingBottom: 10,
+    paddingTop: 15,
+    width: '90%',
+    // borderColor: 'red',
+    // borderWidth: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  view9: {
+    flexShrink: 1,
+    // borderWidth: 1,
+    width: '100%',
+    margin: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 20,
   },
   text1: {
-    alignSelf: 'center',
     fontSize: 16,
     color: '#595959',
   },
@@ -126,13 +232,35 @@ const styles = StyleSheet.create({
     height: 22,
   },
   touchable1: {
-    height: 36,
-    width: '90%',
+    height: 30,
+    width: '100%',
+    padding: 2,
     backgroundColor: 'lightblue',
-    borderRadius: 20,
-    padding: 10,
+    borderRadius: 5,
     elevation: 2,
     justifyContent: 'center',
+    alignItems: 'center',
+    fontSize: 16,
+  },
+  textInput2: {
+    width: '100%',
+    height: 30,
+    borderWidth: 1,
+    borderRadius: 5,
+    fontSize: 16,
+    alignItems: 'center',
+    justifyContent: 'center',
+    textAlign: 'center',
+  },
+  textInput3: {
+    width: '100%',
+    height: 30,
+    borderWidth: 1,
+    borderRadius: 5,
+    fontSize: 16,
+    alignItems: 'center',
+    justifyContent: 'center',
+    textAlign: 'center',
   },
 });
 
