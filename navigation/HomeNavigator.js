@@ -1,22 +1,21 @@
 
-        import 'react-native-gesture-handler';
+import 'react-native-gesture-handler';
 import React from 'react';
-import {createStackNavigator} from '@react-navigation/stack';
+import Colors from "../theme/colors"
+import {createDrawerNavigator} from '@react-navigation/drawer';
+import DrawerContent from './DrawerContent'
+import BookStack from './NavigationStacks/BookStack'
+import WishListStack from './NavigationStacks/WishListStack'
 
-import HomeScreen from '../screens/ValidationScreen';
-import BookScreen from '../screens/BooksScreen';
-import WelcomeScreen from '../screens/WelcomeScreen';
-import WishlistScreen from '../screens/WishlistScreen';
+const Drawer = createDrawerNavigator();
 
-const Stack = createStackNavigator();
 
 function HomeNavigator() {
-  return (
-      <Stack.Navigator initialRouteName="Read">
-        <Stack.Screen name="Read" component={BookScreen} />
-        <Stack.Screen name="My Wishlist" component={WishlistScreen} />
-      </Stack.Navigator>
-  );
+
+  return (<Drawer.Navigator initialRouteName="Book Screen" drawerContent={(props) => <DrawerContent {...props} />}>
+      <Drawer.Screen name="Book Screen" component={BookStack}/>
+      <Drawer.Screen name="My Wishlist" component={WishListStack}/>
+    </Drawer.Navigator>);
 }
 
 export default HomeNavigator;
