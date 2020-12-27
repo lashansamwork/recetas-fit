@@ -116,6 +116,38 @@ function DrawerContent(props) {
                     }}
                 />
 
+                <Drawer.Item
+                    label="Utensilios esenciales"
+                    active={false}
+                    onPress={() => {
+                        changePage(21);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="Ingredientes esenciales"
+                    active={false}
+                    onPress={() => {
+                        changePage(24);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="Saborizantes esenciales"
+                    active={false}
+                    onPress={() => {
+                        changePage(28);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="Elige bien (Calorías Altas vs Bajas)"
+                    active={false}
+                    onPress={() => {
+                        changePage(30);
+                        props.navigation.closeDrawer();
+                    }}
+                />
                 {/* end */}
                 <Drawer.Item
                     style={styles.topic}
