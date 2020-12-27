@@ -1,17 +1,18 @@
-import React, {useState, useRef, useEffect } from 'react';
-import {View, Dimensions, StyleSheet, Text, Linking} from 'react-native';
+import React, { useState, useRef, useEffect } from 'react';
+import { View, Dimensions, StyleSheet, Text, Linking } from 'react-native';
 import { Appbar, Paragraph, Button } from 'react-native-paper';
 import Pdf from 'react-native-pdf';
 import Colors from '../theme/colors';
 import { useRoute } from "@react-navigation/native"
 import { PageContext } from '../context-store/PageContextProvider'
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 function BookScreen() {
 
   const { pageNumber } = React.useContext(PageContext);
 
-  useEffect(()=>{
-    if(pageNumber && pdfRef?.current) {
+  useEffect(() => {
+    if (pageNumber && pdfRef?.current) {
       pdfRef.current.setPage(pageNumber)
       setPage(pageNumber);
     }
@@ -54,23 +55,23 @@ function BookScreen() {
           style={styles.pdf}
         />
       </View>
-      <View style={{ width: '100%'}}>
+      <View style={{ width: '100%' }}>
         <Appbar.Header style={{ backgroundColor: Colors.themeLightColors.primary }}>
-          <View style={{ flex: 1}}>
-            <Button onPress={() => previousPage(page)}>
-              <View style={{ alignItems: 'center', flexDirection: 'row', justifyContent: 'center',  }}>
-                <Appbar.Action icon="arrow-left" color="white"/>
-                <Paragraph style={{ color: 'white'}}>Previous Page</Paragraph>
+          <View style={{ flex: 1 }}>
+            <TouchableOpacity onPress={() => previousPage(page)}>
+              <View style={{ alignItems: 'center', flexDirection: 'row', justifyContent: 'center', }}>
+                <Appbar.Action icon="arrow-left" color="white" />
+                <Paragraph style={{ color: 'white' }}>Previous Page</Paragraph>
               </View>
-            </Button>
+            </TouchableOpacity>
           </View>
-          <View style={{ flex: 1}}>
-            <Button onPress={() => nextPage(page)}>
-              <View style={{ alignItems: 'center', justifyContent: 'center', flexDirection: 'row'}}>
-                <Paragraph style={{ color: 'white'}}>Next Page</Paragraph>
-                <Appbar.Action icon="arrow-right" color="white"/>
+          <View style={{ flex: 1 }} >
+            <TouchableOpacity onPress={() => nextPage(page)}>
+              <View style={{ alignItems: 'center', justifyContent: 'center', flexDirection: 'row' }} >
+                <Paragraph style={{ color: 'white' }} title="Press me">Next Page</Paragraph>
+                <Appbar.Action icon="arrow-right" color="white" />
               </View>
-            </Button>
+            </TouchableOpacity>
           </View>
         </Appbar.Header>
       </View>
