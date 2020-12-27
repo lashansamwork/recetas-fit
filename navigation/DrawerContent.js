@@ -183,7 +183,7 @@ function DrawerContent(props) {
                     }}
                 />
                 <Drawer.Item
-                    label="French Toast “The Rock style”"
+                    label="French Toast The Rock style"
                     active={false}
                     onPress={() => {
                         changePage(41);
@@ -191,7 +191,7 @@ function DrawerContent(props) {
                     }}
                 />
                 <Drawer.Item
-                    label="French Toast “Italian style”"
+                    label="French Toast Italian style"
                     active={false}
                     onPress={() => {
                         changePage(43);
@@ -360,26 +360,58 @@ function DrawerContent(props) {
                     }}
                 />
                 <Drawer.Item
-                    label=""
+                    label="Patatas alioli Fit"
                     active={false}
                     onPress={() => {
-                        changePage();
+                        changePage(80);
                         props.navigation.closeDrawer();
                     }}
                 />
                 <Drawer.Item
-                    label=""
+                    label="Pollo picado barbacoa"
                     active={false}
                     onPress={() => {
-                        changePage();
+                        changePage(81);
                         props.navigation.closeDrawer();
                     }}
                 />
                 <Drawer.Item
-                    label=""
+                    label="Cebolla vinagreta"
                     active={false}
                     onPress={() => {
-                        changePage();
+                        changePage(82);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="Pimientos para fajitas"
+                    active={false}
+                    onPress={() => {
+                        changePage(83);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="Repollo salteado chimichurri"
+                    active={false}
+                    onPress={() => {
+                        changePage(84);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="Pico de gallo"
+                    active={false}
+                    onPress={() => {
+                        changePage(85);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="Bastones de boniato veggie"
+                    active={false}
+                    onPress={() => {
+                        changePage(86);
                         props.navigation.closeDrawer();
                     }}
                 />
@@ -394,29 +426,102 @@ function DrawerContent(props) {
                     }}
                 />
                 <Drawer.Item
-                    label=""
+                    label="Nachos Fit"
                     active={false}
                     onPress={() => {
-                        changePage();
+                        changePage(88);
                         props.navigation.closeDrawer();
                     }}
                 />
                 <Drawer.Item
-                    label=""
+                    label="Montaditos de maíz"
                     active={false}
                     onPress={() => {
-                        changePage();
+                        changePage(90);
                         props.navigation.closeDrawer();
                     }}
                 />
                 <Drawer.Item
-                    label=""
+                    label="Pan de ajo crunchy"
                     active={false}
                     onPress={() => {
-                        changePage();
+                        changePage(92);
                         props.navigation.closeDrawer();
                     }}
                 />
+                <Drawer.Item
+                    label="Pulpo a la gallega"
+                    active={false}
+                    onPress={() => {
+                        changePage(94);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="Tofu teriyaki"
+                    active={false}
+                    onPress={() => {
+                        changePage(96);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="Tofu cheese balls"
+                    active={false}
+                    onPress={() => {
+                        changePage(98);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="Rollos primavera"
+                    active={false}
+                    onPress={() => {
+                        changePage(100);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="Tosta Fit Peanut Butter and Jelly"
+                    active={false}
+                    onPress={() => {
+                        changePage(102);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="Croquetas Fit"
+                    active={false}
+                    onPress={() => {
+                        changePage(104);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="Palomitas Light"
+                    active={false}
+                    onPress={() => {
+                        changePage(106);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="Protein Pudding"
+                    active={false}
+                    onPress={() => {
+                        changePage(108);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="Cinnamon Rolls Fit"
+                    active={false}
+                    onPress={() => {
+                        changePage(110);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+
                 {/* end */}
                 <Drawer.Item
                     style={styles.topic}
