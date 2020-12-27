@@ -50,7 +50,6 @@ function BookScreen() {
           }}
           onPressLink={(uri) => {
             loadInBrowser(uri);
-            console.log(`Link presse: ${uri}`);
           }}
           style={styles.pdf}
         />
