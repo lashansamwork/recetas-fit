@@ -33,14 +33,12 @@ function AuthContextProvider({ children }) {
                 signedResponse = await getSignInStatus();
             } catch (e) {
             }
-            
-            if(signedResponse?.signInStatus){
-                console.log('tadaa...')
+
+            if (signedResponse?.signInStatus) {
                 dispatch({ type: 'SIGN_IN' });
             }
 
             RNBootSplash.hide({ fade: true });
-            console.log("Bootsplash has been hidden successfully");
         };
 
         bootstrapAsync();
@@ -48,12 +46,12 @@ function AuthContextProvider({ children }) {
 
     const getSignInStatus = async () => {
         try {
-          const jsonValue = await AsyncStorage.getItem('@signedInStatus')
-          return jsonValue != null ? JSON.parse(jsonValue) : null;
-        } catch(e) {
+            const jsonValue = await AsyncStorage.getItem('@signedInStatus')
+            return jsonValue != null ? JSON.parse(jsonValue) : null;
+        } catch (e) {
             return null;
         }
-      }
+    }
 
     const authContext = React.useMemo(
         () => ({
@@ -79,4 +77,4 @@ function AuthContextProvider({ children }) {
     </AuthContext.Provider>);
 }
 
-export { AuthContext, AuthContextProvider};
+export { AuthContext, AuthContextProvider };
