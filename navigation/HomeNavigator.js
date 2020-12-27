@@ -27,8 +27,8 @@ function HomeNavigator() {
 
 
 
-  return (<Drawer.Navigator initialRouteName="BookScreen">
-      <Drawer.Screen name="BookScreen" component={BookStack}/>
+  return (<Drawer.Navigator initialRouteName="Book Screen">
+      <Drawer.Screen name="Book Screen" component={BookStack}/>
       <Drawer.Screen name="My Wishlist" component={WishListStack}/>
     </Drawer.Navigator>);
 }

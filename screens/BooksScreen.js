@@ -1,13 +1,10 @@
 import React, {useState, useRef} from 'react';
 import {View, Dimensions, StyleSheet, Text, Linking} from 'react-native';
-import {TouchableOpacity} from 'react-native-gesture-handler';
-import { Drawer } from 'react-native-paper';
-
+import { Appbar, Paragraph, Button } from 'react-native-paper';
 import Pdf from 'react-native-pdf';
+import Colors from '../theme/colors';
 
-function BookScreen({ navigation }) {
-  console.log("🚀 ~ file: BooksScreen.js ~ line 9 ~ BookScreen ~ navigation", navigation);
-  
+function BookScreen() {
   const [active, setActive] = React.useState('');
   const [page, setPage] = useState(1);
   const pdfRef = useRef(null);
@@ -48,20 +45,25 @@ function BookScreen({ navigation }) {
           style={styles.pdf}
         />
       </View>
-      <View style={styles.view2}>
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity onPress={() => previousPage(page)}>
-            <Text style={styles.text1}> {'<'}</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity onPress={() => nextPage(page)}>
-            <Text style={styles.text1}>{'>'}</Text>
-          </TouchableOpacity>
-        </View>
-        <View>
-          <Text style={{color:'white'}}>Zoom</Text>
-        </View>
+      <View style={{ width: '100%'}}>
+        <Appbar.Header style={{ backgroundColor: Colors.themeLightColors.primary }}>
+          <View style={{ flex: 1}}>
+            <Button onPress={() => previousPage(page)}>
+              <View style={{ alignItems: 'center', flexDirection: 'row', justifyContent: 'center',  }}>
+                <Appbar.Action icon="arrow-left" color="white"/>
+                <Paragraph style={{ color: 'white'}}>Previous Page</Paragraph>
+              </View>
+            </Button>
+          </View>
+          <View style={{ flex: 1}}>
+            <Button onPress={() => nextPage(page)}>
+              <View style={{ alignItems: 'center', justifyContent: 'center', flexDirection: 'row'}}>
+                <Paragraph style={{ color: 'white'}}>Next Page</Paragraph>
+                <Appbar.Action icon="arrow-right" color="white"/>
+              </View>
+            </Button>
+          </View>
+        </Appbar.Header>
       </View>
     </View>
   );
