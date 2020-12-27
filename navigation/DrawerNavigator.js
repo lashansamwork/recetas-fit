@@ -1,17 +1,17 @@
 
 import 'react-native-gesture-handler';
 import React, { useCallback } from 'react';
+import { View } from 'react-native'
 import Colors from "../theme/colors"
 import {createDrawerNavigator} from '@react-navigation/drawer';
-
-import BookStack from './NavigationStacks/BookStack'
-import WishListStack from './NavigationStacks/WishListStack'
+import BookScreen from '../screens/BooksScreen';
+import WishlistScreen from '../screens/WishlistScreen';
+import { Button } from 'react-native-paper';
+import { useNavigation } from '@react-navigation/native';
 
 const Drawer = createDrawerNavigator();
 
-
-function HomeNavigator() {
-
+function DrawerNavigator() {
   const getHeaderOptions = useCallback(() => {
     const options = {
       headerStyle: {
@@ -26,11 +26,7 @@ function HomeNavigator() {
   }, [])
 
 
-
-  return (<Drawer.Navigator initialRouteName="BookScreen">
-      <Drawer.Screen name="BookScreen" component={BookStack}/>
-      <Drawer.Screen name="My Wishlist" component={WishListStack}/>
-    </Drawer.Navigator>);
+  return (<View></View>);
 }
 
-export default HomeNavigator;
+export default DrawerNavigator;

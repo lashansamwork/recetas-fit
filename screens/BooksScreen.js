@@ -1,10 +1,14 @@
 import React, {useState, useRef} from 'react';
 import {View, Dimensions, StyleSheet, Text, Linking} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import { Drawer } from 'react-native-paper';
 
 import Pdf from 'react-native-pdf';
 
-function BookScreen() {
+function BookScreen({ navigation }) {
+  console.log("🚀 ~ file: BooksScreen.js ~ line 9 ~ BookScreen ~ navigation", navigation);
+  
+  const [active, setActive] = React.useState('');
   const [page, setPage] = useState(1);
   const pdfRef = useRef(null);
 

@@ -9,12 +9,10 @@ const Stack = createStackNavigator();
 function PrimaryNavigator() {
 
     const { isSignout } = React.useContext(AuthContext);
-    
-
 
     return (
         <Stack.Navigator 
-            initialRouteName="My Wishlist" 
+            initialRouteName="WelcomeNavigator" 
             screenOptions={{
                 headerShown: false
             }}
