@@ -43,9 +43,16 @@ function DrawerContent(props) {
                     }}
                 />
                 <List.AccordionGroup>
-                    <List.Accordion title="Antes de empezar" id="1"
-
-                    >
+                    <List.Accordion title="Antes de empezar" id="1" titleStyle={{ fontSize: 15 }}>
+                        <Drawer.Item
+                            label="Antes de empezar"
+                            active={false}
+                            onPress={() => {
+                                props.navigation.navigate('Book Screen');
+                                changePage(10);
+                                props.navigation.closeDrawer();
+                            }}
+                        />
                         <Drawer.Item
                             label="Sobre nosotros"
                             active={false}
@@ -111,7 +118,16 @@ function DrawerContent(props) {
                         />
                     </List.Accordion>
                     {/* end */}
-                    <List.Accordion title="Esenciales en tu cocina" id="2">
+                    <List.Accordion title="Esenciales en tu cocina" id="2" titleStyle={{ fontSize: 15 }}>
+                        <Drawer.Item
+                            label="Esenciales en tu cocina"
+                            active={false}
+                            onPress={() => {
+                                props.navigation.navigate('Book Screen');
+                                changePage(20);
+                                props.navigation.closeDrawer();
+                            }}
+                        />
                         <Drawer.Item
                             label="Utensilios esenciales"
                             active={false}
@@ -150,7 +166,16 @@ function DrawerContent(props) {
                         />
                     </List.Accordion>
                     {/* end */}
-                    <List.Accordion title="Desayunos" id="3">
+                    <List.Accordion title="Desayunos" id="3" titleStyle={{ fontSize: 15 }}>
+                        <Drawer.Item
+                            label="Desayunos"
+                            active={false}
+                            onPress={() => {
+                                props.navigation.navigate('Book Screen');
+                                changePage(34);
+                                props.navigation.closeDrawer();
+                            }}
+                        />
                         <Drawer.Item
                             label="Pancakes Delicia de Frutos Rojos"
                             active={false}
@@ -216,7 +241,16 @@ function DrawerContent(props) {
                         />
                     </List.Accordion>
                     {/* end */}
-                    <List.Accordion title="Comidas" id="4">
+                    <List.Accordion title="Comidas" id="4" titleStyle={{ fontSize: 15 }}>
+                        <Drawer.Item
+                            label="Comidas"
+                            active={false}
+                            onPress={() => {
+                                props.navigation.navigate('Book Screen');
+                                changePage(49);
+                                props.navigation.closeDrawer();
+                            }}
+                        />
                         <Drawer.Item
                             label="Boniato Burger"
                             active={false}
@@ -281,7 +315,16 @@ function DrawerContent(props) {
                         />
                     </List.Accordion>
                     {/* end */}
-                    <List.Accordion title="Cenas" id="5">
+                    <List.Accordion title="Cenas" id="5" titleStyle={{ fontSize: 15 }}>
+                        <Drawer.Item
+                            label="Cenas"
+                            active={false}
+                            onPress={() => {
+                                props.navigation.navigate('Book Screen');
+                                changePage(64);
+                                props.navigation.closeDrawer();
+                            }}
+                        />
                         <Drawer.Item
                             label="Pizza Keto"
                             active={false}
@@ -421,7 +464,16 @@ function DrawerContent(props) {
                         />
                     </List.Accordion>
                     {/* end */}
-                    <List.Accordion title="Snacks" id="6">
+                    <List.Accordion title="Snacks" id="6" titleStyle={{ fontSize: 15 }}>
+                        <Drawer.Item
+                            label="Snacks"
+                            active={false}
+                            onPress={() => {
+                                props.navigation.navigate('Book Screen');
+                                changePage(87);
+                                props.navigation.closeDrawer();
+                            }}
+                        />
                         <Drawer.Item
                             label="Nachos Fit"
                             active={false}
@@ -533,7 +585,16 @@ function DrawerContent(props) {
 
                     </List.Accordion>
                     {/* end */}
-                    <List.Accordion title="Postres" id="7">
+                    <List.Accordion title="Postres" id="7" titleStyle={{ fontSize: 15 }}>
+                        <Drawer.Item
+                            label="Postres"
+                            active={false}
+                            onPress={() => {
+                                props.navigation.navigate('Book Screen');
+                                changePage(112);
+                                props.navigation.closeDrawer();
+                            }}
+                        />
                         <Drawer.Item
                             label="Helados Fit"
                             active={false}
@@ -654,7 +715,16 @@ function DrawerContent(props) {
 
                     </List.Accordion>
                     {/* end */}
-                    <List.Accordion title="Salsas saladas" id="8">
+                    <List.Accordion title="Salsas saladas" id="8" titleStyle={{ fontSize: 15 }}>
+                        <Drawer.Item
+                            label="Salsas saladas"
+                            active={false}
+                            onPress={() => {
+                                props.navigation.navigate('Book Screen');
+                                changePage(139);
+                                props.navigation.closeDrawer();
+                            }}
+                        />
                         <Drawer.Item
                             label="Aliño estilo Big Mac"
                             active={false}
@@ -739,7 +809,16 @@ function DrawerContent(props) {
 
                     </List.Accordion>
                     {/* end */}
-                    <List.Accordion title="Salsas dulces" id="9">
+                    <List.Accordion title="Salsas dulces" id="9" titleStyle={{ fontSize: 15 }}>
+                        <Drawer.Item
+                            label="Salsas dulces"
+                            active={false}
+                            onPress={() => {
+                                props.navigation.navigate('Book Screen');
+                                changePage(149);
+                                props.navigation.closeDrawer();
+                            }}
+                        />
                         <Drawer.Item
                             label="FitCream Cacahuete"
                             active={false}
@@ -788,7 +867,16 @@ function DrawerContent(props) {
                         />
                     </List.Accordion>
                     {/* end */}
-                    <List.Accordion title="Zona tropical" id="10">
+                    <List.Accordion title="Zona tropical" id="10" titleStyle={{ fontSize: 15 }}>
+                        <Drawer.Item
+                            label="Zona tropical"
+                            active={false}
+                            onPress={() => {
+                                props.navigation.navigate('Book Screen');
+                                changePage(155);
+                                props.navigation.closeDrawer();
+                            }}
+                        />
                         <Drawer.Item
                             label="El famoso Mangú dominicano"
                             active={false}
