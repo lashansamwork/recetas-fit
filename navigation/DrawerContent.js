@@ -158,6 +158,63 @@ function DrawerContent(props) {
                         props.navigation.closeDrawer();
                     }}
                 />
+                <Drawer.Item
+                    label="Pancakes Delicia de Frutos Rojos"
+                    active={false}
+                    onPress={() => {
+                        changePage(35);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="Pancake-Toast Sueño de Chocolate "
+                    active={false}
+                    onPress={() => {
+                        changePage(37);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="Creps estilo caprese"
+                    active={false}
+                    onPress={() => {
+                        changePage(39);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="French Toast “The Rock style”"
+                    active={false}
+                    onPress={() => {
+                        changePage(41);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="French Toast “Italian style”"
+                    active={false}
+                    onPress={() => {
+                        changePage(43);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="Tostas de jamón y aguacate"
+                    active={false}
+                    onPress={() => {
+                        changePage(45);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="Protein Cereal bowl"
+                    active={false}
+                    onPress={() => {
+                        changePage(47);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+
                 {/* end */}
                 <Drawer.Item
                     style={styles.topic}
@@ -165,6 +222,14 @@ function DrawerContent(props) {
                     active={false}
                     onPress={() => {
                         changePage(49);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label=""
+                    active={false}
+                    onPress={() => {
+                        changePage();
                         props.navigation.closeDrawer();
                     }}
                 />
@@ -178,6 +243,14 @@ function DrawerContent(props) {
                         props.navigation.closeDrawer();
                     }}
                 />
+                <Drawer.Item
+                    label=""
+                    active={false}
+                    onPress={() => {
+                        changePage();
+                        props.navigation.closeDrawer();
+                    }}
+                />
                 {/* end */}
                 <Drawer.Item
                     style={styles.topic}
@@ -188,6 +261,7 @@ function DrawerContent(props) {
                         props.navigation.closeDrawer();
                     }}
                 />
+
                 {/* end */}
                 <Drawer.Item
                     style={styles.topic}
