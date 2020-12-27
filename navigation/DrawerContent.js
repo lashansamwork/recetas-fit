@@ -533,29 +533,110 @@ function DrawerContent(props) {
                     }}
                 />
                 <Drawer.Item
-                    label=""
+                    label="Helados Fit"
                     active={false}
                     onPress={() => {
-                        changePage();
+                        changePage(113);
                         props.navigation.closeDrawer();
                     }}
                 />
                 <Drawer.Item
-                    label=""
+                    label="Fit Cheesecake"
                     active={false}
                     onPress={() => {
-                        changePage();
+                        changePage(115);
                         props.navigation.closeDrawer();
                     }}
                 />
                 <Drawer.Item
-                    label=""
+                    label="Pop Tart Fit"
                     active={false}
                     onPress={() => {
-                        changePage();
+                        changePage(117);
                         props.navigation.closeDrawer();
                     }}
                 />
+                <Drawer.Item
+                    label="Bizcocho de Tres leches Fit"
+                    active={false}
+                    onPress={() => {
+                        changePage(119);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="Tartade Halloween"
+                    active={false}
+                    onPress={() => {
+                        changePage(121);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="Volcán de chocolate"
+                    active={false}
+                    onPress={() => {
+                        changePage(123);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="Brownie Muerte por chocolate"
+                    active={false}
+                    onPress={() => {
+                        changePage(125);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="Fit Carrot cake"
+                    active={false}
+                    onPress={() => {
+                        changePage(127);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="Tarta de Pantera Rosa Fit"
+                    active={false}
+                    onPress={() => {
+                        changePage(129);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="Cookie Choco-Marshmallow"
+                    active={false}
+                    onPress={() => {
+                        changePage(131);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="Bizcocho de Frambuesa"
+                    active={false}
+                    onPress={() => {
+                        changePage(133);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="Lemon Pie"
+                    active={false}
+                    onPress={() => {
+                        changePage(135);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="Apple Pie"
+                    active={false}
+                    onPress={() => {
+                        changePage(137);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+
                 {/* end */}
                 <Drawer.Item
                     style={styles.topic}
@@ -567,29 +648,78 @@ function DrawerContent(props) {
                     }}
                 />
                 <Drawer.Item
-                    label=""
+                    label="Aliño estilo Big Mac"
                     active={false}
                     onPress={() => {
-                        changePage();
+                        changePage(140);
                         props.navigation.closeDrawer();
                     }}
                 />
                 <Drawer.Item
-                    label=""
+                    label="Alioli Light"
                     active={false}
                     onPress={() => {
-                        changePage();
+                        changePage(141);
                         props.navigation.closeDrawer();
                     }}
                 />
                 <Drawer.Item
-                    label=""
+                    label="Guacamole casero"
                     active={false}
                     onPress={() => {
-                        changePage();
+                        changePage(142);
                         props.navigation.closeDrawer();
                     }}
                 />
+                <Drawer.Item
+                    label="Hummus casero"
+                    active={false}
+                    onPress={() => {
+                        changePage(143);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="Crema agria Light"
+                    active={false}
+                    onPress={() => {
+                        changePage(144);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="Dip Alubias rojas"
+                    active={false}
+                    onPress={() => {
+                        changePage(145);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="Burger Light"
+                    active={false}
+                    onPress={() => {
+                        changePage(146);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="Agridulce Light"
+                    active={false}
+                    onPress={() => {
+                        changePage(147);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="Pesto Light"
+                    active={false}
+                    onPress={() => {
+                        changePage(148);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+
                 {/* end */}
                 <Drawer.Item
                     style={styles.topic}
@@ -601,26 +731,43 @@ function DrawerContent(props) {
                     }}
                 />
                 <Drawer.Item
-                    label=""
+                    label="FitCream Cacahuete"
                     active={false}
                     onPress={() => {
-                        changePage();
+                        changePage(150);
                         props.navigation.closeDrawer();
                     }}
                 />
                 <Drawer.Item
-                    label=""
+                    label="FitCream Choco Blanco"
                     active={false}
                     onPress={() => {
-                        changePage();
+                        changePage(151);
                         props.navigation.closeDrawer();
                     }}
                 />
                 <Drawer.Item
-                    label=""
+                    label="Sirope de pancake 0cal"
                     active={false}
                     onPress={() => {
-                        changePage();
+                        changePage(152);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+
+                <Drawer.Item
+                    label="Mermelada de fresa casera"
+                    active={false}
+                    onPress={() => {
+                        changePage(153);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="Frosting de Vainilla Fit"
+                    active={false}
+                    onPress={() => {
+                        changePage(154);
                         props.navigation.closeDrawer();
                     }}
                 />
@@ -635,26 +782,26 @@ function DrawerContent(props) {
                     }}
                 />
                 <Drawer.Item
-                    label=""
+                    label="El famoso Mangú dominicano"
                     active={false}
                     onPress={() => {
-                        changePage();
+                        changePage(156);
                         props.navigation.closeDrawer();
                     }}
                 />
                 <Drawer.Item
-                    label=""
+                    label="La bandera dominicana"
                     active={false}
                     onPress={() => {
-                        changePage();
+                        changePage(158);
                         props.navigation.closeDrawer();
                     }}
                 />
                 <Drawer.Item
-                    label=""
+                    label="Palitos de yuca"
                     active={false}
                     onPress={() => {
-                        changePage();
+                        changePage(160);
                         props.navigation.closeDrawer();
                     }}
                 />
