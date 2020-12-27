@@ -3,6 +3,8 @@ import {
   Keyboard,
   View,
   StyleSheet,
+  Text,
+  Linking,
 } from 'react-native';
 import database from '@react-native-firebase/database';
 import Toast from 'react-native-simple-toast';
@@ -45,8 +47,10 @@ function HomeScreen({ navigation }) {
           <Paragraph style={{ textAlign: 'center' }}>
             por favor introduce la contraseña de acceso que enviamos a tu correo.
             </Paragraph>
-          <Paragraph dataDetectorType="email">
-            ( Preguntas: info@mariacasas.es )
+          <Paragraph
+            style={{ color: '#595959', fontWeight: '400', }}
+            onPress={() => Linking.openURL('mailto:info@mariacasas.es')}>
+            ( Preguntas: <Text style={{ color: '#FC3158' }}>info@mariacasas.es</Text> )
             </Paragraph>
         </View>
       </View>
