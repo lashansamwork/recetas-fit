@@ -16,7 +16,6 @@ function DrawerContent(props) {
     const { routes, index } = state; //Not sure about the name of index property. Do check it out by logging the 'state' variable.
     const focusedRoute = routes[index];
     const { changePage } = React.useContext(PageContext);
-
     return (
         <DrawerContentScrollView {...props}>
             <DrawerItem
@@ -34,6 +33,8 @@ function DrawerContent(props) {
                     label="Indice"
                     active={false}
                     onPress={() => {
+                        console.log('state printing', state);
+                        props.navigation.navigate('Book Screen');
                         changePage(2);
                         props.navigation.closeDrawer();
                     }}
@@ -43,6 +44,7 @@ function DrawerContent(props) {
                     active={false}
                     style={styles.topic}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(10);
                         props.navigation.closeDrawer();
                     }}
@@ -52,6 +54,7 @@ function DrawerContent(props) {
                     label="Sobre nosotros"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(11);
                         props.navigation.closeDrawer();
                     }}
@@ -60,6 +63,7 @@ function DrawerContent(props) {
                     label="Guia de iconos"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(12);
                         props.navigation.closeDrawer();
                     }}
@@ -68,6 +72,7 @@ function DrawerContent(props) {
                     label="Consejos Importantes"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(13);
                         props.navigation.closeDrawer();
                     }}
@@ -76,6 +81,7 @@ function DrawerContent(props) {
                     label="Perder grasa"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(15);
                         props.navigation.closeDrawer();
                     }}
@@ -84,6 +90,7 @@ function DrawerContent(props) {
                     label="Recordatorios"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(17);
                         props.navigation.closeDrawer();
                     }}
@@ -92,6 +99,7 @@ function DrawerContent(props) {
                     label="Un libro para todos. Msj para"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(18);
                         props.navigation.closeDrawer();
                     }}
@@ -100,6 +108,7 @@ function DrawerContent(props) {
                     label="Recomendados del super"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(19);
                         props.navigation.closeDrawer();
                     }}
@@ -111,6 +120,7 @@ function DrawerContent(props) {
                     label="Esenciales en tu cocina"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(20);
                         props.navigation.closeDrawer();
                     }}
@@ -120,6 +130,7 @@ function DrawerContent(props) {
                     label="Utensilios esenciales"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(21);
                         props.navigation.closeDrawer();
                     }}
@@ -128,6 +139,7 @@ function DrawerContent(props) {
                     label="Ingredientes esenciales"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(24);
                         props.navigation.closeDrawer();
                     }}
@@ -136,6 +148,7 @@ function DrawerContent(props) {
                     label="Saborizantes esenciales"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(28);
                         props.navigation.closeDrawer();
                     }}
@@ -144,6 +157,7 @@ function DrawerContent(props) {
                     label="Elige bien (Calorías Altas vs Bajas)"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(30);
                         props.navigation.closeDrawer();
                     }}
@@ -154,6 +168,7 @@ function DrawerContent(props) {
                     label="Desayunos"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(34);
                         props.navigation.closeDrawer();
                     }}
@@ -162,6 +177,7 @@ function DrawerContent(props) {
                     label="Pancakes Delicia de Frutos Rojos"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(35);
                         props.navigation.closeDrawer();
                     }}
@@ -170,6 +186,7 @@ function DrawerContent(props) {
                     label="Pancake-Toast Sueño de Chocolate "
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(37);
                         props.navigation.closeDrawer();
                     }}
@@ -178,6 +195,7 @@ function DrawerContent(props) {
                     label="Creps estilo caprese"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(39);
                         props.navigation.closeDrawer();
                     }}
@@ -186,6 +204,7 @@ function DrawerContent(props) {
                     label="French Toast The Rock style"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(41);
                         props.navigation.closeDrawer();
                     }}
@@ -194,6 +213,7 @@ function DrawerContent(props) {
                     label="French Toast Italian style"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(43);
                         props.navigation.closeDrawer();
                     }}
@@ -202,6 +222,7 @@ function DrawerContent(props) {
                     label="Tostas de jamón y aguacate"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(45);
                         props.navigation.closeDrawer();
                     }}
@@ -210,6 +231,7 @@ function DrawerContent(props) {
                     label="Protein Cereal bowl"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(47);
                         props.navigation.closeDrawer();
                     }}
@@ -221,6 +243,7 @@ function DrawerContent(props) {
                     label="Comidas"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(49);
                         props.navigation.closeDrawer();
                     }}
@@ -229,6 +252,7 @@ function DrawerContent(props) {
                     label="Boniato Burger"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(50);
                         props.navigation.closeDrawer();
                     }}
@@ -245,6 +269,7 @@ function DrawerContent(props) {
                     label="Ensalada Burrito"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(54);
                         props.navigation.closeDrawer();
                     }}
@@ -253,6 +278,7 @@ function DrawerContent(props) {
                     label="Pimientos rellenos"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(56);
                         props.navigation.closeDrawer();
                     }}
@@ -261,6 +287,7 @@ function DrawerContent(props) {
                     label="Megawraps fit"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(58);
                         props.navigation.closeDrawer();
                     }}
@@ -269,6 +296,7 @@ function DrawerContent(props) {
                     label="Bomba de patatas"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(60);
                         props.navigation.closeDrawer();
                     }}
@@ -277,6 +305,7 @@ function DrawerContent(props) {
                     label="Lasaña de repollo"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(62);
                         props.navigation.closeDrawer();
                     }}
@@ -289,6 +318,7 @@ function DrawerContent(props) {
                     label="Cenas"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(64);
                         props.navigation.closeDrawer();
                     }}
@@ -297,6 +327,7 @@ function DrawerContent(props) {
                     label="Pizza Keto"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(65);
                         props.navigation.closeDrawer();
                     }}
@@ -305,6 +336,7 @@ function DrawerContent(props) {
                     label="Patatas supremas"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(67);
                         props.navigation.closeDrawer();
                     }}
@@ -313,6 +345,7 @@ function DrawerContent(props) {
                     label="Canelones de berenjena"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(69);
                         props.navigation.closeDrawer();
                     }}
@@ -321,6 +354,7 @@ function DrawerContent(props) {
                     label="Slim Pasta"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(71);
                         props.navigation.closeDrawer();
                     }}
@@ -329,6 +363,7 @@ function DrawerContent(props) {
                     label="Huevos rotos"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(73);
                         props.navigation.closeDrawer();
                     }}
@@ -337,6 +372,7 @@ function DrawerContent(props) {
                     label="Pastel de brócoli"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(75);
                         props.navigation.closeDrawer();
                     }}
@@ -345,6 +381,7 @@ function DrawerContent(props) {
                     label="Salmón con patatas alioli"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(77);
                         props.navigation.closeDrawer();
                     }}
@@ -355,6 +392,7 @@ function DrawerContent(props) {
                     label="Guarniciones"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(79);
                         props.navigation.closeDrawer();
                     }}
@@ -363,6 +401,7 @@ function DrawerContent(props) {
                     label="Patatas alioli Fit"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(80);
                         props.navigation.closeDrawer();
                     }}
@@ -371,6 +410,7 @@ function DrawerContent(props) {
                     label="Pollo picado barbacoa"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(81);
                         props.navigation.closeDrawer();
                     }}
@@ -379,6 +419,7 @@ function DrawerContent(props) {
                     label="Cebolla vinagreta"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(82);
                         props.navigation.closeDrawer();
                     }}
@@ -387,6 +428,7 @@ function DrawerContent(props) {
                     label="Pimientos para fajitas"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(83);
                         props.navigation.closeDrawer();
                     }}
@@ -395,6 +437,7 @@ function DrawerContent(props) {
                     label="Repollo salteado chimichurri"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(84);
                         props.navigation.closeDrawer();
                     }}
@@ -403,6 +446,7 @@ function DrawerContent(props) {
                     label="Pico de gallo"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(85);
                         props.navigation.closeDrawer();
                     }}
@@ -411,6 +455,7 @@ function DrawerContent(props) {
                     label="Bastones de boniato veggie"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(86);
                         props.navigation.closeDrawer();
                     }}
@@ -421,6 +466,7 @@ function DrawerContent(props) {
                     label="Snacks"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(87);
                         props.navigation.closeDrawer();
                     }}
@@ -429,6 +475,7 @@ function DrawerContent(props) {
                     label="Nachos Fit"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(88);
                         props.navigation.closeDrawer();
                     }}
@@ -437,6 +484,7 @@ function DrawerContent(props) {
                     label="Montaditos de maíz"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(90);
                         props.navigation.closeDrawer();
                     }}
@@ -445,6 +493,7 @@ function DrawerContent(props) {
                     label="Pan de ajo crunchy"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(92);
                         props.navigation.closeDrawer();
                     }}
@@ -453,6 +502,7 @@ function DrawerContent(props) {
                     label="Pulpo a la gallega"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(94);
                         props.navigation.closeDrawer();
                     }}
@@ -461,6 +511,7 @@ function DrawerContent(props) {
                     label="Tofu teriyaki"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(96);
                         props.navigation.closeDrawer();
                     }}
@@ -469,6 +520,7 @@ function DrawerContent(props) {
                     label="Tofu cheese balls"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(98);
                         props.navigation.closeDrawer();
                     }}
@@ -477,6 +529,7 @@ function DrawerContent(props) {
                     label="Rollos primavera"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(100);
                         props.navigation.closeDrawer();
                     }}
@@ -485,6 +538,7 @@ function DrawerContent(props) {
                     label="Tosta Fit Peanut Butter and Jelly"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(102);
                         props.navigation.closeDrawer();
                     }}
@@ -493,6 +547,7 @@ function DrawerContent(props) {
                     label="Croquetas Fit"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(104);
                         props.navigation.closeDrawer();
                     }}
@@ -501,6 +556,7 @@ function DrawerContent(props) {
                     label="Palomitas Light"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(106);
                         props.navigation.closeDrawer();
                     }}
@@ -509,6 +565,7 @@ function DrawerContent(props) {
                     label="Protein Pudding"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(108);
                         props.navigation.closeDrawer();
                     }}
@@ -517,6 +574,7 @@ function DrawerContent(props) {
                     label="Cinnamon Rolls Fit"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(110);
                         props.navigation.closeDrawer();
                     }}
@@ -528,6 +586,7 @@ function DrawerContent(props) {
                     label="Postres"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(112);
                         props.navigation.closeDrawer();
                     }}
@@ -536,6 +595,7 @@ function DrawerContent(props) {
                     label="Helados Fit"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(113);
                         props.navigation.closeDrawer();
                     }}
@@ -544,6 +604,7 @@ function DrawerContent(props) {
                     label="Fit Cheesecake"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(115);
                         props.navigation.closeDrawer();
                     }}
@@ -552,6 +613,7 @@ function DrawerContent(props) {
                     label="Pop Tart Fit"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(117);
                         props.navigation.closeDrawer();
                     }}
@@ -560,6 +622,7 @@ function DrawerContent(props) {
                     label="Bizcocho de Tres leches Fit"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(119);
                         props.navigation.closeDrawer();
                     }}
@@ -568,6 +631,7 @@ function DrawerContent(props) {
                     label="Tartade Halloween"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(121);
                         props.navigation.closeDrawer();
                     }}
@@ -576,6 +640,7 @@ function DrawerContent(props) {
                     label="Volcán de chocolate"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(123);
                         props.navigation.closeDrawer();
                     }}
@@ -584,6 +649,7 @@ function DrawerContent(props) {
                     label="Brownie Muerte por chocolate"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(125);
                         props.navigation.closeDrawer();
                     }}
@@ -592,6 +658,7 @@ function DrawerContent(props) {
                     label="Fit Carrot cake"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(127);
                         props.navigation.closeDrawer();
                     }}
@@ -600,6 +667,7 @@ function DrawerContent(props) {
                     label="Tarta de Pantera Rosa Fit"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(129);
                         props.navigation.closeDrawer();
                     }}
@@ -608,6 +676,7 @@ function DrawerContent(props) {
                     label="Cookie Choco-Marshmallow"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(131);
                         props.navigation.closeDrawer();
                     }}
@@ -616,6 +685,7 @@ function DrawerContent(props) {
                     label="Bizcocho de Frambuesa"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(133);
                         props.navigation.closeDrawer();
                     }}
@@ -624,6 +694,7 @@ function DrawerContent(props) {
                     label="Lemon Pie"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(135);
                         props.navigation.closeDrawer();
                     }}
@@ -632,6 +703,7 @@ function DrawerContent(props) {
                     label="Apple Pie"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(137);
                         props.navigation.closeDrawer();
                     }}
@@ -643,6 +715,7 @@ function DrawerContent(props) {
                     label="Salsas saladas"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(139);
                         props.navigation.closeDrawer();
                     }}
@@ -651,6 +724,7 @@ function DrawerContent(props) {
                     label="Aliño estilo Big Mac"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(140);
                         props.navigation.closeDrawer();
                     }}
@@ -659,6 +733,7 @@ function DrawerContent(props) {
                     label="Alioli Light"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(141);
                         props.navigation.closeDrawer();
                     }}
@@ -667,6 +742,7 @@ function DrawerContent(props) {
                     label="Guacamole casero"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(142);
                         props.navigation.closeDrawer();
                     }}
@@ -675,6 +751,7 @@ function DrawerContent(props) {
                     label="Hummus casero"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(143);
                         props.navigation.closeDrawer();
                     }}
@@ -683,6 +760,7 @@ function DrawerContent(props) {
                     label="Crema agria Light"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(144);
                         props.navigation.closeDrawer();
                     }}
@@ -691,6 +769,7 @@ function DrawerContent(props) {
                     label="Dip Alubias rojas"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(145);
                         props.navigation.closeDrawer();
                     }}
@@ -699,6 +778,7 @@ function DrawerContent(props) {
                     label="Burger Light"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(146);
                         props.navigation.closeDrawer();
                     }}
@@ -707,6 +787,7 @@ function DrawerContent(props) {
                     label="Agridulce Light"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(147);
                         props.navigation.closeDrawer();
                     }}
@@ -715,6 +796,7 @@ function DrawerContent(props) {
                     label="Pesto Light"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(148);
                         props.navigation.closeDrawer();
                     }}
@@ -726,6 +808,7 @@ function DrawerContent(props) {
                     label="Salsas dulces"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(149);
                         props.navigation.closeDrawer();
                     }}
@@ -734,6 +817,7 @@ function DrawerContent(props) {
                     label="FitCream Cacahuete"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(150);
                         props.navigation.closeDrawer();
                     }}
@@ -742,6 +826,7 @@ function DrawerContent(props) {
                     label="FitCream Choco Blanco"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(151);
                         props.navigation.closeDrawer();
                     }}
@@ -750,6 +835,7 @@ function DrawerContent(props) {
                     label="Sirope de pancake 0cal"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(152);
                         props.navigation.closeDrawer();
                     }}
@@ -759,6 +845,7 @@ function DrawerContent(props) {
                     label="Mermelada de fresa casera"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(153);
                         props.navigation.closeDrawer();
                     }}
@@ -767,6 +854,7 @@ function DrawerContent(props) {
                     label="Frosting de Vainilla Fit"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(154);
                         props.navigation.closeDrawer();
                     }}
@@ -777,6 +865,7 @@ function DrawerContent(props) {
                     label="Zona tropical"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(155);
                         props.navigation.closeDrawer();
                     }}
@@ -785,6 +874,7 @@ function DrawerContent(props) {
                     label="El famoso Mangú dominicano"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(156);
                         props.navigation.closeDrawer();
                     }}
@@ -793,6 +883,7 @@ function DrawerContent(props) {
                     label="La bandera dominicana"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(158);
                         props.navigation.closeDrawer();
                     }}
@@ -801,6 +892,7 @@ function DrawerContent(props) {
                     label="Palitos de yuca"
                     active={false}
                     onPress={() => {
+                        props.navigation.navigate('Book Screen');
                         changePage(160);
                         props.navigation.closeDrawer();
                     }}
