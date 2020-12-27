@@ -5,6 +5,7 @@ import Pdf from 'react-native-pdf';
 import Colors from '../theme/colors';
 import { useRoute } from "@react-navigation/native"
 import { PageContext } from '../context-store/PageContextProvider'
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 function BookScreen() {
 
@@ -56,20 +57,20 @@ function BookScreen() {
       <View style={{ width: '100%' }}>
         <Appbar.Header style={{ backgroundColor: Colors.themeLightColors.primary }}>
           <View style={{ flex: 1 }}>
-            <Button onPress={() => previousPage(page)}>
+            <TouchableOpacity onPress={() => previousPage(page)}>
               <View style={{ alignItems: 'center', flexDirection: 'row', justifyContent: 'center', }}>
                 <Appbar.Action icon="arrow-left" color="white" />
                 <Paragraph style={{ color: 'white' }}>Previous Page</Paragraph>
               </View>
-            </Button>
+            </TouchableOpacity>
           </View>
-          <View style={{ flex: 1 }}>
-            <Button onPress={() => nextPage(page)}>
-              <View style={{ alignItems: 'center', justifyContent: 'center', flexDirection: 'row' }}>
-                <Paragraph style={{ color: 'white' }}>Next Page</Paragraph>
+          <View style={{ flex: 1 }} >
+            <TouchableOpacity onPress={() => nextPage(page)}>
+              <View style={{ alignItems: 'center', justifyContent: 'center', flexDirection: 'row' }} >
+                <Paragraph style={{ color: 'white' }} title="Press me">Next Page</Paragraph>
                 <Appbar.Action icon="arrow-right" color="white" />
               </View>
-            </Button>
+            </TouchableOpacity>
           </View>
         </Appbar.Header>
       </View>
