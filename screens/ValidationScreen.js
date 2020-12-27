@@ -20,27 +20,18 @@ function HomeScreen({ navigation }) {
   const handleCode = () => {
     Keyboard.dismiss();
     let isNavigationCompleted = false;
-    console.log('show toast = ' + isNavigationCompleted + ' at line 18');
     const reference = database().ref('/codes/').once('value');
-    console.log(reference);
     reference.then((snapshot) => {
       const codesObject = snapshot.val();
       let codesArray = Object.keys(codesObject).map((k) => codesObject[k]);
-      console.log('snapshot values: ', codesArray);
       codesArray.map((key) => {
-        console.log('comparing ', key, typeof key, ' to code ', typeof code);
         if (code === key) {
-          console.log('showToast = ' + isNavigationCompleted + ' line 28');
-          console.log('key correct!');
           signIn();
           isNavigationCompleted = true;
         }
       });
-      console.log('check after nav');
       if (isNavigationCompleted === false) {
-        console.log('showToast = ' + isNavigationCompleted + ' at line 35');
         Toast.show('Please check the validation code again and try again.');
-        console.log('line 36');
       }
     });
   };
