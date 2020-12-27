@@ -226,13 +226,63 @@ function DrawerContent(props) {
                     }}
                 />
                 <Drawer.Item
-                    label=""
+                    label="Boniato Burger"
                     active={false}
                     onPress={() => {
-                        changePage();
+                        changePage(50);
                         props.navigation.closeDrawer();
                     }}
                 />
+                <Drawer.Item
+                    label="Palomitas de pollo"
+                    active={false}
+                    onPress={() => {
+                        changePage(52);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="Ensalada Burrito"
+                    active={false}
+                    onPress={() => {
+                        changePage(54);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="Pimientos rellenos"
+                    active={false}
+                    onPress={() => {
+                        changePage(56);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="Megawraps fit"
+                    active={false}
+                    onPress={() => {
+                        changePage(58);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="Bomba de patatas"
+                    active={false}
+                    onPress={() => {
+                        changePage(60);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="Lasaña de repollo"
+                    active={false}
+                    onPress={() => {
+                        changePage(62);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+
+
                 {/* end */}
                 <Drawer.Item
                     style={styles.topic}
@@ -244,10 +294,58 @@ function DrawerContent(props) {
                     }}
                 />
                 <Drawer.Item
-                    label=""
+                    label="Pizza Keto"
                     active={false}
                     onPress={() => {
-                        changePage();
+                        changePage(65);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="Patatas supremas"
+                    active={false}
+                    onPress={() => {
+                        changePage(67);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="Canelones de berenjena"
+                    active={false}
+                    onPress={() => {
+                        changePage(69);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="Slim Pasta"
+                    active={false}
+                    onPress={() => {
+                        changePage(71);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="Huevos rotos"
+                    active={false}
+                    onPress={() => {
+                        changePage(73);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="Pastel de brócoli"
+                    active={false}
+                    onPress={() => {
+                        changePage(75);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label="Salmón con patatas alioli"
+                    active={false}
+                    onPress={() => {
+                        changePage(77);
                         props.navigation.closeDrawer();
                     }}
                 />
@@ -261,7 +359,30 @@ function DrawerContent(props) {
                         props.navigation.closeDrawer();
                     }}
                 />
-
+                <Drawer.Item
+                    label=""
+                    active={false}
+                    onPress={() => {
+                        changePage();
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label=""
+                    active={false}
+                    onPress={() => {
+                        changePage();
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label=""
+                    active={false}
+                    onPress={() => {
+                        changePage();
+                        props.navigation.closeDrawer();
+                    }}
+                />
                 {/* end */}
                 <Drawer.Item
                     style={styles.topic}
@@ -269,6 +390,30 @@ function DrawerContent(props) {
                     active={false}
                     onPress={() => {
                         changePage(87);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label=""
+                    active={false}
+                    onPress={() => {
+                        changePage();
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label=""
+                    active={false}
+                    onPress={() => {
+                        changePage();
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label=""
+                    active={false}
+                    onPress={() => {
+                        changePage();
                         props.navigation.closeDrawer();
                     }}
                 />
@@ -282,6 +427,30 @@ function DrawerContent(props) {
                         props.navigation.closeDrawer();
                     }}
                 />
+                <Drawer.Item
+                    label=""
+                    active={false}
+                    onPress={() => {
+                        changePage();
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label=""
+                    active={false}
+                    onPress={() => {
+                        changePage();
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label=""
+                    active={false}
+                    onPress={() => {
+                        changePage();
+                        props.navigation.closeDrawer();
+                    }}
+                />
                 {/* end */}
                 <Drawer.Item
                     style={styles.topic}
@@ -289,6 +458,30 @@ function DrawerContent(props) {
                     active={false}
                     onPress={() => {
                         changePage(139);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label=""
+                    active={false}
+                    onPress={() => {
+                        changePage();
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label=""
+                    active={false}
+                    onPress={() => {
+                        changePage();
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label=""
+                    active={false}
+                    onPress={() => {
+                        changePage();
                         props.navigation.closeDrawer();
                     }}
                 />
@@ -302,6 +495,30 @@ function DrawerContent(props) {
                         props.navigation.closeDrawer();
                     }}
                 />
+                <Drawer.Item
+                    label=""
+                    active={false}
+                    onPress={() => {
+                        changePage();
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label=""
+                    active={false}
+                    onPress={() => {
+                        changePage();
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label=""
+                    active={false}
+                    onPress={() => {
+                        changePage();
+                        props.navigation.closeDrawer();
+                    }}
+                />
                 {/* end */}
                 <Drawer.Item
                     style={styles.topic}
@@ -309,6 +526,30 @@ function DrawerContent(props) {
                     active={false}
                     onPress={() => {
                         changePage(155);
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label=""
+                    active={false}
+                    onPress={() => {
+                        changePage();
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label=""
+                    active={false}
+                    onPress={() => {
+                        changePage();
+                        props.navigation.closeDrawer();
+                    }}
+                />
+                <Drawer.Item
+                    label=""
+                    active={false}
+                    onPress={() => {
+                        changePage();
                         props.navigation.closeDrawer();
                     }}
                 />
