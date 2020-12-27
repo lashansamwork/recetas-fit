@@ -25,6 +25,7 @@
     "react-native-action-button": "^2.8.5",
     "react-native-bootsplash": "^3.1.2",
     "react-native-gesture-handler": "^1.9.0",
+    "react-native-keyboard-aware-scroll-view": "^0.9.3",
     "react-native-paper": "^4.5.0",
     "react-native-pdf": "^6.2.2",
     "react-native-reanimated": "^1.13.2",
