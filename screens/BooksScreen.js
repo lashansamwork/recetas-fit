@@ -1,11 +1,24 @@
-import React, {useState, useRef} from 'react';
+import React, {useState, useRef, useEffect } from 'react';
 import {View, Dimensions, StyleSheet, Text, Linking} from 'react-native';
 import { Appbar, Paragraph, Button } from 'react-native-paper';
 import Pdf from 'react-native-pdf';
 import Colors from '../theme/colors';
+import { useRoute } from "@react-navigation/native"
+import { PageContext } from '../context-store/PageContextProvider'
 
 function BookScreen() {
-  const [active, setActive] = React.useState('');
+
+  const { pageNumber } = React.useContext(PageContext);
+
+  useEffect(()=>{
+    if(pageNumber && pdfRef?.current) {
+      pdfRef.current.setPage(pageNumber)
+      setPage(pageNumber);
+    }
+
+  }, [pageNumber])
+
+
   const [page, setPage] = useState(1);
   const pdfRef = useRef(null);
 
@@ -28,11 +41,7 @@ function BookScreen() {
         <Pdf
           ref={pdfRef}
           source={source}
-          onLoadComplete={(numberOfPages, filePath) => {
-            console.log(`number of pages: ${numberOfPages}`);
-          }}
           onPageChanged={(page, numberOfPages) => {
-            console.log(`current page: ${page}`);
             setPage(page);
           }}
           onError={(error) => {

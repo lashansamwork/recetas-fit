@@ -34,10 +34,10 @@ function AuthContextProvider({ children }) {
             } catch (e) {
             }
             
-            // if(signedResponse?.signInStatus){
-            //     console.log('tadaa...')
-            //     dispatch({ type: 'SIGN_IN' });
-            // }
+            if(signedResponse?.signInStatus){
+                console.log('tadaa...')
+                dispatch({ type: 'SIGN_IN' });
+            }
 
             RNBootSplash.hide({ fade: true });
             console.log("Bootsplash has been hidden successfully");
