@@ -3,7 +3,7 @@
  */
 
 import * as React from 'react';
-import {AppRegistry} from 'react-native';
+import {AppRegistry, StatusBar} from 'react-native';
 import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 import { name as appName } from './app.json';
 import Colors from './theme/colors'
@@ -22,6 +22,7 @@ const theme = {
 export default function Main() {
   return (
     <PaperProvider theme={theme}>
+      <StatusBar barStyle="light-content"/>
       <App />
     </PaperProvider>
   );
