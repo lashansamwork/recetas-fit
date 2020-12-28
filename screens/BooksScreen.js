@@ -6,10 +6,12 @@ import Colors from '../theme/colors';
 import { useRoute } from "@react-navigation/native"
 import { PageContext } from '../context-store/PageContextProvider'
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { useOrientation } from '../hooks/useOrientation'
 
 function BookScreen() {
 
   const { pageNumber } = React.useContext(PageContext);
+  const orientation = useOrientation();
 
   useEffect(() => {
     if (pageNumber && pdfRef?.current) {
@@ -40,6 +42,8 @@ function BookScreen() {
     <View style={styles.container}>
       <View style={styles.view1}>
         <Pdf
+          fitPolicy={0}
+          minScale={orientation==="PORTRAIT"? 1.0: 0.5}
           ref={pdfRef}
           source={source}
           onPageChanged={(page, numberOfPages) => {
@@ -94,6 +98,7 @@ const styles = StyleSheet.create({
   },
   view1: {
     flex: 1,
+    width: '100%'
   },
   view2: {
     flexDirection: 'row',
@@ -109,8 +114,8 @@ const styles = StyleSheet.create({
   },
   pdf: {
     flex: 1,
-    width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height,
+    width: null,
+    height: null,
   },
 });
 
