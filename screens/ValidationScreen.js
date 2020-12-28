@@ -17,13 +17,22 @@ import Layout from "../theme/layout"
 function HomeScreen({ navigation }) {
   const [code, setCode] = useState('');
   const { signIn } = React.useContext(AuthContext);
+
+  const writeToBase = () => {
+    database()
+      .ref('/codes/joeTest/')
+      .update({
+        isCodeUsed: true,
+      })
+  }
+
+
   const handleCode = () => {
     Keyboard.dismiss();
     let isNavigationCompleted = false;
     let isCodeUsedFlag = false;
     const reference = database().ref('/codes/').once('value');
     reference.then((snapshot) => {
-      // Array convert {{}, {}, {} }
       const codesObject = snapshot.val();
 
       const codesArray = Object.values(codesObject).map((x) => [x.code, x.isCodeUsed]);
@@ -33,6 +42,7 @@ function HomeScreen({ navigation }) {
         if (code === element[0]) {//match
           if (!element[1]) {//nver used
             signIn();
+            writeToBase();
             isNavigationCompleted = true;
           }
           else {//code used
