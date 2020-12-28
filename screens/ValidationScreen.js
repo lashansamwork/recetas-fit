@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import {
   Keyboard,
   View,
-  StyleSheet,
   Text,
   Linking,
 } from 'react-native';
@@ -17,21 +16,41 @@ import Layout from "../theme/layout"
 function HomeScreen({ navigation }) {
   const [code, setCode] = useState('');
   const { signIn } = React.useContext(AuthContext);
+
+  const writeToBase = (username) => {
+    database()
+      .ref('/codes/' + `${username}` + '/')
+      .update({
+        isCodeUsed: true,
+      })
+  }
   const handleCode = () => {
     Keyboard.dismiss();
     let isNavigationCompleted = false;
+    let isCodeUsedFlag = false;
     const reference = database().ref('/codes/').once('value');
     reference.then((snapshot) => {
       const codesObject = snapshot.val();
-      let codesArray = Object.keys(codesObject).map((k) => codesObject[k]);
-      codesArray.map((key) => {
-        if (code === key) {
-          signIn();
-          isNavigationCompleted = true;
+      const codesValueArray = Object.values(codesObject).map((x) => [x.code, x.isCodeUsed]);
+      const codesUserArray = Object.keys(codesObject);
+      codesValueArray.map((element, index) => {
+        if (code === element[0]) {
+          if (!element[1]) {
+            signIn();
+            writeToBase(codesUserArray[index]);
+            isNavigationCompleted = true;
+          }
+          else {
+            console.log('Toast for', element[0]);
+            isCodeUsedFlag = true;
+          }
         }
       });
-      if (isNavigationCompleted === false) {
-        Toast.show('Please check the validation code again and try again.');
+      if (isNavigationCompleted === false && isCodeUsedFlag === false) {
+        Toast.show('Verifique la contraseña de validación nuevamente e intente nuevamente');
+      }
+      if (isCodeUsedFlag === true) {
+        Toast.show('La contraseña de un solo uso ya se usa');
       }
     });
   };
@@ -60,7 +79,6 @@ function HomeScreen({ navigation }) {
             secureTextEntry={true}
             mode="outlined"
             label="Valication code"
-            keyboardType=""
             onChangeText={(val) => setCode(val)}
             onSubmitEditing={() => handleCode()}
           />
