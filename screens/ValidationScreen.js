@@ -60,7 +60,6 @@ function HomeScreen({ navigation }) {
             secureTextEntry={true}
             mode="outlined"
             label="Valication code"
-            keyboardType=""
             onChangeText={(val) => setCode(val)}
             onSubmitEditing={() => handleCode()}
           />
