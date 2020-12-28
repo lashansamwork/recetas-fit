@@ -20,18 +20,32 @@ function HomeScreen({ navigation }) {
   const handleCode = () => {
     Keyboard.dismiss();
     let isNavigationCompleted = false;
+    let isCodeUsedFlag = false;
     const reference = database().ref('/codes/').once('value');
     reference.then((snapshot) => {
+      // Array convert {{}, {}, {} }
       const codesObject = snapshot.val();
-      let codesArray = Object.keys(codesObject).map((k) => codesObject[k]);
-      codesArray.map((key) => {
-        if (code === key) {
-          signIn();
-          isNavigationCompleted = true;
+
+      const codesArray = Object.values(codesObject).map((x) => [x.code, x.isCodeUsed]);
+      console.log("🚀 ~ file: ValidationScreen.js ~ line 29 ~ reference.then ~ codesArray", codesArray);
+
+      codesArray.map(element => {
+        if (code === element[0]) {//match
+          if (!element[1]) {//nver used
+            signIn();
+            isNavigationCompleted = true;
+          }
+          else {//code used
+            console.log('Toast for', element[0]);
+            isCodeUsedFlag = true;
+          }
         }
       });
-      if (isNavigationCompleted === false) {
-        Toast.show('Please check the validation code again and try again.');
+      if (isNavigationCompleted === false && isCodeUsedFlag === false) {
+        Toast.show('Verifique la contraseña de validación nuevamente e intente nuevamente');
+      }
+      if (isCodeUsedFlag === true) {
+        Toast.show('La contraseña de un solo uso ya se usa');
       }
     });
   };
