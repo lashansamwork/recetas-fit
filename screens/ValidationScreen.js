@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import {
   Keyboard,
   View,
-  StyleSheet,
   Text,
   Linking,
 } from 'react-native';
@@ -18,15 +17,13 @@ function HomeScreen({ navigation }) {
   const [code, setCode] = useState('');
   const { signIn } = React.useContext(AuthContext);
 
-  const writeToBase = () => {
+  const writeToBase = (username) => {
     database()
-      .ref('/codes/joeTest/')
+      .ref('/codes/' + `${username}` + '/')
       .update({
         isCodeUsed: true,
       })
   }
-
-
   const handleCode = () => {
     Keyboard.dismiss();
     let isNavigationCompleted = false;
@@ -34,18 +31,16 @@ function HomeScreen({ navigation }) {
     const reference = database().ref('/codes/').once('value');
     reference.then((snapshot) => {
       const codesObject = snapshot.val();
-
-      const codesArray = Object.values(codesObject).map((x) => [x.code, x.isCodeUsed]);
-      console.log("🚀 ~ file: ValidationScreen.js ~ line 29 ~ reference.then ~ codesArray", codesArray);
-
-      codesArray.map(element => {
-        if (code === element[0]) {//match
-          if (!element[1]) {//nver used
+      const codesValueArray = Object.values(codesObject).map((x) => [x.code, x.isCodeUsed]);
+      const codesUserArray = Object.keys(codesObject);
+      codesValueArray.map((element, index) => {
+        if (code === element[0]) {
+          if (!element[1]) {
             signIn();
-            writeToBase();
+            writeToBase(codesUserArray[index]);
             isNavigationCompleted = true;
           }
-          else {//code used
+          else {
             console.log('Toast for', element[0]);
             isCodeUsedFlag = true;
           }
