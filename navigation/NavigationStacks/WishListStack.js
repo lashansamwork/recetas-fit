@@ -38,8 +38,8 @@ function WishListStack() {
 
 
 
-  return (<Stack.Navigator initialRouteName="WishList">
-      <Stack.Screen name="WishList" component={WishlistScreen} options={({ navigation })=>getHeaderOptions(navigation)}/>
+  return (<Stack.Navigator initialRouteName="Lista de la Compra">
+      <Stack.Screen name="Lista de la Compra" component={WishlistScreen} options={({ navigation })=>getHeaderOptions(navigation)}/>
     </Stack.Navigator>);
 }
 
