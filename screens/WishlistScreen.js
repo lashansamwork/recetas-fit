@@ -69,23 +69,23 @@ const WishlistScreen = () => {
     <View style={{ flex: 1, padding: layout.padding.xxxLarge }}>
       <Modal isVisible={modalVisible} onBackdropPress={()=>setModalVisible(false)} avoidKeyboard={true}>
         <View style={{ backgroundColor: 'white', borderRadius: layout.radius.image, padding: layout.padding.large}}>
-          <Title>Add your grocery item</Title>
+          <Title>Añadir artículo</Title>
           <View style={{ paddingTop: layout.padding.medium }}/>
           <TextInput
             mode="outlined"
-            label="Item name"
+            label="Nombre del artículo"
             onChangeText={(val) => setItemName(val)}
           />
           <View style={{ paddingTop: layout.padding.medium }}/>
           <TextInput
             mode="outlined"
-            label="Quantitiy"
+            label="Cantidad"
             onChangeText={(val) => setItemQuantity(val)}
           />
           <View style={{ flexDirection: 'row', paddingTop: layout.padding.large }}>
             <View style={{ flex: 1 }}>
               <Button mode="outlined" onPress={() => setModalVisible(false)}>
-                Cancel
+                Cancelar
               </Button>
             </View>
             <View style={{ flex: 0.2 }}/>
@@ -94,10 +94,10 @@ const WishlistScreen = () => {
                 const wishListArrayLength = wishlistArr.length;
 
                 if(!!!itemName){
-                  Toast.show('Item name cannot be empty');
+                  Toast.show('El nombre no puede estar vacío');
                   return;
                 } else if(!!!itemQuantity){
-                  Toast.show('Item quantity cannot be empty');
+                  Toast.show('la cantidad no puede estar vacía');
                   return;
                 }
 
@@ -112,7 +112,7 @@ const WishlistScreen = () => {
                 setWishlistArr([...wishlistArr, itemToAdd]);
                 setModalVisible(false);
               }}>
-                  Add item
+                  Añadir
               </Button>
             </View>
           </View>
@@ -120,7 +120,7 @@ const WishlistScreen = () => {
       </Modal>
       <View style={{ flexGrow: 1}}>
         <FlatList
-          ListEmptyComponent={<View style={{ alignItems: 'center' }}><Subheading>Your Wishlist is empty</Subheading></View>}
+          ListEmptyComponent={<View style={{ alignItems: 'center' }}><Subheading> Tu lista esta vacía</Subheading></View>}
           data={wishlistArr}
           renderItem={renderItem}
           keyExtractor={(item, index) => {
@@ -130,7 +130,7 @@ const WishlistScreen = () => {
       </View>
       <ActionButton
         buttonColor={Colors.themeLightColors.primary}
-        title="Add"
+        title="Añadir"
         useNativeFeedback={true}
         onPress={() => setModalVisible(true)}
       />

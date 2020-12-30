@@ -64,14 +64,14 @@ function BookScreen() {
             <TouchableOpacity onPress={() => previousPage(page)}>
               <View style={{ alignItems: 'center', flexDirection: 'row', justifyContent: 'center', }}>
                 <Appbar.Action icon="arrow-left" color="white" />
-                <Paragraph style={{ color: 'white' }}>Previous Page</Paragraph>
+                <Paragraph style={{ color: 'white' }}>Anterior</Paragraph>
               </View>
             </TouchableOpacity>
           </View>
           <View style={{ flex: 1 }} >
             <TouchableOpacity onPress={() => nextPage(page)}>
               <View style={{ alignItems: 'center', justifyContent: 'center', flexDirection: 'row' }} >
-                <Paragraph style={{ color: 'white' }} title="Press me">Next Page</Paragraph>
+                <Paragraph style={{ color: 'white' }} title="Press me">Siguiente</Paragraph>
                 <Appbar.Action icon="arrow-right" color="white" />
               </View>
             </TouchableOpacity>

@@ -12,9 +12,9 @@ const Drawer = createDrawerNavigator();
 
 function HomeNavigator() {
 
-  return (<Drawer.Navigator initialRouteName="Book Screen" drawerContent={(props) => <DrawerContent {...props} />}>
-      <Drawer.Screen name="Book Screen" component={BookStack}/>
-      <Drawer.Screen name="My Wishlist" component={WishListStack}/>
+  return (<Drawer.Navigator initialRouteName="Cocina Anabólica" drawerContent={(props) => <DrawerContent {...props} />}>
+      <Drawer.Screen name="Cocina Anabólica" component={BookStack}/>
+      <Drawer.Screen name="Lista de la Compra" component={WishListStack}/>
     </Drawer.Navigator>);
 }
 
