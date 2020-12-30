@@ -41,7 +41,6 @@ function HomeScreen({ navigation }) {
             isNavigationCompleted = true;
           }
           else {
-            console.log('Toast for', element[0]);
             isCodeUsedFlag = true;
           }
         }
@@ -78,14 +77,14 @@ function HomeScreen({ navigation }) {
           <TextInput
             secureTextEntry={true}
             mode="outlined"
-            label="Valication code"
+            label="Contraseña de validación"
             onChangeText={(val) => setCode(val)}
             onSubmitEditing={() => handleCode()}
           />
         </View>
         <View style={{ flex: 1 }}>
           <Button mode="contained" onPress={() => handleCode()}>
-            Verify
+            Verificar
           </Button>
         </View>
       </View>

@@ -25,7 +25,7 @@ function WelcomeScreen({navigation}) {
       </View>
       <View style={{ flexShrink: 1, paddingHorizontal: Layout.padding.xxxLarge, paddingBottom: Layout.padding.xxxLarge }}>
         <Button mode="contained" onPress={() => onContinueBtnFn()}>
-          Continue
+          Seguir
         </Button>
       </View>
     </View>
