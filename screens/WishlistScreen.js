@@ -97,7 +97,7 @@ const WishlistScreen = () => {
     const updatedWishList = wishlistArr.filter((item) => item.id !== id);
     setWishlistArr(updatedWishList);
   };
-  
+
   const filteredSearchItemPress = (newItem) => {
     let itemToAdd = [];
     let lenghtAdder = 0;
@@ -133,10 +133,10 @@ const WishlistScreen = () => {
               borderRadius: layout.radius.image,
               padding: layout.padding.large,
             }}>
-            <Title>Recipes</Title>
+            <Title>Recitas</Title>
 
             <Searchbar
-              placeholder="Search"
+              placeholder="Buscar"
               onChangeText={onChangeSearch}
               value={searchQuery}
               style={{marginTop: layout.padding.xxxLarge}}
@@ -183,13 +183,13 @@ const WishlistScreen = () => {
             <View style={{paddingTop: layout.padding.medium}} />
             <TextInput
               mode="outlined"
-              label="Item name"
+              label="Nombre del árticulo"
               onChangeText={(val) => setItemName(val)}
             />
             <View style={{paddingTop: layout.padding.medium}} />
             <TextInput
               mode="outlined"
-              label="Quantitiy"
+              label="Cantidad"
               onChangeText={(val) => setItemQuantity(val)}
             />
             <View
@@ -246,7 +246,7 @@ const WishlistScreen = () => {
         <FlatList
           ListEmptyComponent={
             <View style={{alignItems: 'center'}}>
-              <Subheading>Your Wishlist is empty</Subheading>
+              <Subheading>Tu lista esta vacia</Subheading>
             </View>
           }
           data={wishlistArr}
@@ -265,7 +265,5 @@ const WishlistScreen = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({});
 
 export default WishlistScreen;
