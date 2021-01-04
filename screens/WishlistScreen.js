@@ -97,21 +97,20 @@ const WishlistScreen = () => {
     const updatedWishList = wishlistArr.filter((item) => item.id !== id);
     setWishlistArr(updatedWishList);
   };
-
+  
   const filteredSearchItemPress = (newItem) => {
     let itemToAdd = [];
-    newItem.map((element) => 
+    let lenghtAdder = 0;
+    newItem.map((element, index) => 
     {
+      lenghtAdder = wishlistArr.length + index;
       itemToAdd.push({
-        id: wishlistArr.length,
+        id: lenghtAdder,
         title: element.name,
         quantity: element.quantity,
       })
     });
-    setWishlistArr();
     setWishlistArr([...wishlistArr, ...itemToAdd]);
-    // setItemName("OK");
-    // setItemQuantity(...itemQuantityArr);
   };
 
   if (loading) {
