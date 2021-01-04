@@ -29,18 +29,20 @@ const WishlistScreen = () => {
 
   const items = [
     {
-      title: 'chocolate',
-      recipe: {
-        milk: '1L',
-        flour: '1kg',
-      },
+      title:"pudding1",
+      recipe:
+      [
+        {name:"item1", quantity:1},
+        {name:"item2", quantity:2}
+      ], 
     },
     {
-      title: 'mango juice',
-      recipe: {
-        water: '1L',
-        milk: '1kg',
-      },
+      title:"pudding1",
+      recipe:
+      [
+        {name:"item3", quantity:3},
+        {name:"item4", quantity:4}
+      ]
     },
   ];
 
@@ -71,8 +73,6 @@ const WishlistScreen = () => {
   };
 
   const onChangeSearch = (query) => {
-    console.log('working.');
-    console.log('onChangesearch query', query);
     setSearchQuery(query);
   };
 
@@ -99,8 +99,19 @@ const WishlistScreen = () => {
   };
 
   const filteredSearchItemPress = (newItem) => {
-    setItemName(newItem.name);
-    setItemQuantity(newItem.quantity);
+    let itemToAdd = [];
+    newItem.map((element) => 
+    {
+      itemToAdd.push({
+        id: wishlistArr.length,
+        title: element.name,
+        quantity: element.quantity,
+      })
+    });
+    setWishlistArr();
+    setWishlistArr([...wishlistArr, ...itemToAdd]);
+    // setItemName("OK");
+    // setItemQuantity(...itemQuantityArr);
   };
 
   if (loading) {
@@ -136,7 +147,7 @@ const WishlistScreen = () => {
               {!filteredItems.length && (
                 <View style={{paddingTop: layout.padding.xxxLarge}}>
                   <Text>
-                    No match
+                    no hay resultados coincidentes
                   </Text>
                 </View>
               )}
@@ -146,7 +157,7 @@ const WishlistScreen = () => {
                   style={{paddingVertical: layout.padding.medium}}>
                   <Button
                     color="black"
-                    onPress={() => filteredSearchItemPress(element)}>
+                    onPress={() => filteredSearchItemPress(element.recipe)}>
                     {element.title}
                   </Button>
                 </View>
@@ -242,7 +253,6 @@ const WishlistScreen = () => {
           data={wishlistArr}
           renderItem={renderItem}
           keyExtractor={(item, index) => {
-            console.log('running flatlist');
             return `${index}`;
           }}
         />
