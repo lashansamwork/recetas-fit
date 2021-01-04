@@ -12,6 +12,7 @@ import {
   Subheading,
   Searchbar,
   List,
+  Avatar,
 } from 'react-native-paper';
 import WishlistItem from '../components/WishlistItem';
 import layout from '../theme/layout';
@@ -154,14 +155,20 @@ const WishlistScreen = () => {
             {/* <List.Section title="Accordions"> */}
             <List.Accordion title="Alimentación">
               {itemsToDisplay.map((element, index) => (
-                <View
+                <View  
                   key={`${index}`}
-                  style={{ paddingVertical: layout.padding.medium }}>
-                  <Button
-                    color="black"
-                    onPress={() => filteredSearchItemPress(element.recipe)}>
-                    {element.title}
-                  </Button>
+                  style={{ paddingVertical: layout.padding.medium, flex: 1, flexDirection: 'row' }}>
+                    <View style={{padding: 15}}></View>
+                  <View style={{ alignSelf: 'center' }} >
+                    <Avatar.Image size={18} source={require('../assets/imgs/1ChocolateBlanco0%.png')} />
+                  </View>
+                  <View >
+                    <Button
+                      color="black"
+                      onPress={() => filteredSearchItemPress(element.recipe)}>
+                      {element.title}
+                    </Button>
+                  </View>
                 </View>
               ))}
             </List.Accordion>
