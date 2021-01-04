@@ -1,13 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import {
-  View,
-  StyleSheet,
-  Text
-} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {View, StyleSheet, ScrollView} from 'react-native';
 import ActionButton from 'react-native-action-button';
-import { FlatList } from 'react-native-gesture-handler';
-import Colors from "../theme/colors"
-import { Button, Title, TextInput, ActivityIndicator, Subheading } from 'react-native-paper';
+import {FlatList} from 'react-native-gesture-handler';
+import Colors from '../theme/colors';
+import {
+  Button,
+  Title,
+  Text,
+  TextInput,
+  ActivityIndicator,
+  Subheading,
+  Searchbar,
+} from 'react-native-paper';
 import WishlistItem from '../components/WishlistItem';
 import layout from '../theme/layout';
 import Modal from 'react-native-modal';
@@ -16,121 +20,236 @@ import Toast from 'react-native-simple-toast';
 
 const WishlistScreen = () => {
   const [modalVisible, setModalVisible] = useState(false);
-  const [loading, setLoading]= useState(true);
+  const [isShowRecipe, setIsShowRecipe] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [wishlistArr, setWishlistArr] = useState([]);
   const [itemName, setItemName] = useState(null);
   const [itemQuantity, setItemQuantity] = useState(null);
+  const [searchQuery, setSearchQuery] = useState('');
 
-  useEffect(()=>{
-    getWishList()
+  const items = [
+    {
+      title: 'chocolate',
+      recipe: {
+        milk: '1L',
+        flour: '1kg',
+      },
+    },
+    {
+      title: 'mango juice',
+      recipe: {
+        water: '1L',
+        milk: '1kg',
+      },
+    },
+  ];
+
+  useEffect(() => {
+    getWishList();
   }, []);
 
-  useEffect(()=>{
-    if(wishlistArr){
-      settWishList()
+  useEffect(() => {
+    if (wishlistArr) {
+      settWishList();
     }
   }, [wishlistArr]);
 
-
-  const settWishList = async ()=> {
+  const settWishList = async () => {
     const jsonValue = JSON.stringify(wishlistArr);
     AsyncStorage.setItem('@wishList', jsonValue);
-  }
+  };
 
-
-  const getWishList = async ()=> {
+  const getWishList = async () => {
     const wishListJson = await AsyncStorage.getItem('@wishList');
-    const wishListData = wishListJson != null ?  JSON.parse(wishListJson) : null;
-    if(wishListData){
+    const wishListData = wishListJson != null ? JSON.parse(wishListJson) : null;
+    if (wishListData) {
       setWishlistArr(wishListData);
     }
-    setTimeout(()=>{
+    setTimeout(() => {
       setLoading(false);
-    }, 1000)
-  }
+    }, 1000);
+  };
 
+  const onChangeSearch = (query) => {
+    console.log('working.');
+    console.log('onChangesearch query', query);
+    setSearchQuery(query);
+  };
 
-  const renderItem = ({ item }) => {
-    return <WishlistItem title={item.title} quantity={item.quantity} id={item.id} onDeletePressed={onDeletePressed} />;
+  const filteredItems = items.filter((item) =>
+    item.title.toLocaleLowerCase().includes(searchQuery.toLocaleLowerCase()),
+  );
+
+  const itemsToDisplay = searchQuery ? filteredItems : items;
+
+  const renderItem = ({item}) => {
+    return (
+      <WishlistItem
+        title={item.title}
+        quantity={item.quantity}
+        id={item.id}
+        onDeletePressed={onDeletePressed}
+      />
+    );
   };
 
   const onDeletePressed = (id) => {
     const updatedWishList = wishlistArr.filter((item) => item.id !== id);
     setWishlistArr(updatedWishList);
-  }
+  };
 
-  if(loading){
-    return (<View style={{ flex: 1, padding: layout.padding.xxxLarge}}>
-      <ActivityIndicator animating={true} color={Colors.accent} />
-    </View>)
-  }
+  const filteredSearchItemPress = (newItem) => {
+    setItemName(newItem.name);
+    setItemQuantity(newItem.quantity);
+  };
 
+  if (loading) {
+    return (
+      <View style={{flex: 1, padding: layout.padding.xxxLarge}}>
+        <ActivityIndicator animating={true} color={Colors.accent} />
+      </View>
+    );
+  }
   return (
-    <View style={{ flex: 1, padding: layout.padding.xxxLarge }}>
-      <Modal isVisible={modalVisible} onBackdropPress={()=>setModalVisible(false)} avoidKeyboard={true}>
-        <View style={{ backgroundColor: 'white', borderRadius: layout.radius.image, padding: layout.padding.large}}>
-          <Title>Añadir artículo</Title>
-          <View style={{ paddingTop: layout.padding.medium }}/>
-          <TextInput
-            mode="outlined"
-            label="Nombre del artículo"
-            onChangeText={(val) => setItemName(val)}
-          />
-          <View style={{ paddingTop: layout.padding.medium }}/>
-          <TextInput
-            mode="outlined"
-            label="Cantidad"
-            onChangeText={(val) => setItemQuantity(val)}
-          />
-          <View style={{ flexDirection: 'row', paddingTop: layout.padding.large }}>
-            <View style={{ flex: 1 }}>
-              <Button mode="outlined" onPress={() => setModalVisible(false)}>
-                Cancelar
-              </Button>
-            </View>
-            <View style={{ flex: 0.2 }}/>
-            <View style={{ flex: 1 }}>
-              <Button mode="contained" onPress={() => {
-                const wishListArrayLength = wishlistArr.length;
+    <View style={{flex: 1, padding: layout.padding.xxxLarge}}>
+      <Modal
+        isVisible={modalVisible}
+        onBackdropPress={() => setModalVisible(false)}
+        avoidKeyboard={true}>
+        {isShowRecipe ? (
+          <View
+            style={{
+              backgroundColor: 'white',
+              borderRadius: layout.radius.image,
+              padding: layout.padding.large,
+            }}>
+            <Title>Recipes</Title>
 
-                if(!!!itemName){
-                  Toast.show('El nombre no puede estar vacío');
-                  return;
-                } else if(!!!itemQuantity){
-                  Toast.show('la cantidad no puede estar vacía');
-                  return;
-                }
+            <Searchbar
+              placeholder="Search"
+              onChangeText={onChangeSearch}
+              value={searchQuery}
+              style={{marginTop: layout.padding.xxxLarge}}
+            />
 
-                let itemToAdd = {
-                  id: wishListArrayLength,
-                  title: itemName,
-                  quantity: itemQuantity,
-                };
+            <ScrollView style={{paddingVertical: layout.padding.xxxLarge}}>
+              {!filteredItems.length && (
+                <View style={{paddingTop: layout.padding.xxxLarge}}>
+                  <Text>
+                    No match
+                  </Text>
+                </View>
+              )}
+              {itemsToDisplay.map((element, index) => (
+                <View
+                  key={`${index}`}
+                  style={{paddingVertical: layout.padding.medium}}>
+                  <Button
+                    color="black"
+                    onPress={() => filteredSearchItemPress(element)}>
+                    {element.title}
+                  </Button>
+                </View>
+              ))}
+            </ScrollView>
 
-                setItemName("");
-                setItemQuantity("");
-                setWishlistArr([...wishlistArr, itemToAdd]);
-                setModalVisible(false);
+            <Button
+              mode="outlined"
+              onPress={() => {
+                setIsShowRecipe(false);
               }}>
+              agregar elementos personalizados
+            </Button>
+          </View>
+        ) : (
+          <View
+            isVisible={!isShowRecipe}
+            style={{
+              backgroundColor: 'white',
+              borderRadius: layout.radius.image,
+              padding: layout.padding.large,
+            }}>
+            <Title>Añadir artículo</Title>
+            <View style={{paddingTop: layout.padding.medium}} />
+            <TextInput
+              mode="outlined"
+              label="Item name"
+              onChangeText={(val) => setItemName(val)}
+            />
+            <View style={{paddingTop: layout.padding.medium}} />
+            <TextInput
+              mode="outlined"
+              label="Quantitiy"
+              onChangeText={(val) => setItemQuantity(val)}
+            />
+            <View
+              style={{flexDirection: 'row', paddingTop: layout.padding.large}}>
+              <View style={{flex: 1}}>
+                <Button mode="outlined" onPress={() => setModalVisible(false)}>
+                  Cancelar
+                </Button>
+              </View>
+
+              <View style={{flex: 0.2}} />
+              <View style={{flex: 1}}>
+                <Button
+                  mode="contained"
+                  onPress={() => {
+                    const wishListArrayLength = wishlistArr.length;
+
+                    if (!itemName) {
+                      Toast.show('El nombre no puede estar vacío');
+                      return;
+                    } else if (!itemQuantity) {
+                      Toast.show('la cantidad no puede estar vacía');
+                      return;
+                    }
+
+                    let itemToAdd = {
+                      id: wishListArrayLength,
+                      title: itemName,
+                      quantity: itemQuantity,
+                    };
+
+                    setItemName('');
+                    setItemQuantity('');
+                    setWishlistArr([...wishlistArr, itemToAdd]);
+                    setModalVisible(false);
+                  }}>
                   Añadir
+                </Button>
+              </View>
+            </View>
+            <View style={{paddingTop: layout.padding.xxxLarge}}>
+              <Button
+                onPress={() => {
+                  setIsShowRecipe(true);
+                }}>
+                Recitas
               </Button>
             </View>
           </View>
-        </View>
+        )}
       </Modal>
-      <View style={{ flexGrow: 1}}>
+
+      <View style={{flexGrow: 1}}>
         <FlatList
-          ListEmptyComponent={<View style={{ alignItems: 'center' }}><Subheading> Tu lista esta vacía</Subheading></View>}
+          ListEmptyComponent={
+            <View style={{alignItems: 'center'}}>
+              <Subheading>Your Wishlist is empty</Subheading>
+            </View>
+          }
           data={wishlistArr}
           renderItem={renderItem}
           keyExtractor={(item, index) => {
+            console.log('running flatlist');
             return `${index}`;
           }}
         />
       </View>
       <ActionButton
-        buttonColor={Colors.themeLightColors.primary}
-        title="Añadir"
+        buttonColor="rgba(231,76,60,1)"
+        title="Add"
         useNativeFeedback={true}
         onPress={() => setModalVisible(true)}
       />
@@ -138,8 +257,6 @@ const WishlistScreen = () => {
   );
 };
 
-const styles = StyleSheet.create({
-
-});
+const styles = StyleSheet.create({});
 
 export default WishlistScreen;
