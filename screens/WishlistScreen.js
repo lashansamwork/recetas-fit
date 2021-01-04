@@ -52,11 +52,11 @@ const WishlistScreen = () => {
 
   useEffect(() => {
     if (wishlistArr) {
-      settWishList();
+      setWishList();
     }
   }, [wishlistArr]);
 
-  const settWishList = async () => {
+  const setWishList = async () => {
     const jsonValue = JSON.stringify(wishlistArr);
     AsyncStorage.setItem('@wishList', jsonValue);
   };
