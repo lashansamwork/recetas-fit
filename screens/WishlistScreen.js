@@ -37,7 +37,7 @@ const WishlistScreen = () => {
       ], 
     },
     {
-      title:"pudding1",
+      title:"pudding2",
       recipe:
       [
         {name:"item3", quantity:3},
@@ -246,7 +246,7 @@ const WishlistScreen = () => {
         <FlatList
           ListEmptyComponent={
             <View style={{alignItems: 'center'}}>
-              <Subheading>Tu lista esta vacia</Subheading>
+              <Subheading>Tu lista de deseos no tiene nada</Subheading>
             </View>
           }
           data={wishlistArr}

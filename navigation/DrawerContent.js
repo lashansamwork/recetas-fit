@@ -917,6 +917,12 @@ function DrawerContent(props) {
                 onPress={() => props.navigation.navigate('Lista de la Compra')}
                 activeTintColor={Colors.themeLightColors.primary}
             />
+            <DrawerItem
+                label="Notas"
+                focused={focusedRoute.name === "Notas"}
+                onPress={() => props.navigation.navigate('Notas')}
+                activeTintColor={Colors.themeLightColors.primary}
+            />
 
         </DrawerContentScrollView>
 

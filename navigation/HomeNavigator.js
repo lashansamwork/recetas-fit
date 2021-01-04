@@ -6,6 +6,7 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 import DrawerContent from './DrawerContent'
 import BookStack from './NavigationStacks/BookStack'
 import WishListStack from './NavigationStacks/WishListStack'
+import NotesStack from './NavigationStacks/NotesStack';
 
 const Drawer = createDrawerNavigator();
 
@@ -15,6 +16,7 @@ function HomeNavigator() {
   return (<Drawer.Navigator initialRouteName="Cocina Anabólica" drawerContent={(props) => <DrawerContent {...props} />}>
       <Drawer.Screen name="Cocina Anabólica" component={BookStack}/>
       <Drawer.Screen name="Lista de la Compra" component={WishListStack}/>
+      <Drawer.Screen name="Notas" component={NotesStack}/>
     </Drawer.Navigator>);
 }
 
