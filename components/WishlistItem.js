@@ -1,25 +1,35 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
-import { List, Divider, Button } from 'react-native-paper';
-import Colors from "../theme/colors"
+import { View, Linking, StyleSheet } from 'react-native';
+import { List, Divider, Button, Avatar, IconButton, Colors } from 'react-native-paper';
 import Layout from "../theme/layout"
 
-const WishlistItem = ({ id, title, quantity, onDeletePressed }) => {
+const WishlistItem = ({ id, title, link, img, onDeletePressed }) => {
   return (<View>
     <View style={{ flexDirection: 'row', flex: 1, alignItems: 'center' }}>
-      <View style={{flex: 1}}>
+      <View style={{ flex: 0.5}}>
+        <Avatar.Image size={28} source={img} />
+      </View>
+      <View style={{ flex: 1 }}>
+        
         <List.Item
           title={title}
         />
       </View>
-      <View style={{flex: 1}}>
+      <View >
+      <IconButton
+          icon="camera"
+          color={Colors.red500}
+          size={20}
+          onPress={() => Linking.openURL(link)}
+        />
+      </View>
+      <View style={{ flex: 1 }}>
         <List.Item
-          title={quantity}
-          right={props => <Button mode="text" onPress={()=>{ onDeletePressed(id) }}>DELETE</Button>}
+          right={props => <Button mode="text" onPress={() => { onDeletePressed(id) }}>DELETE</Button>}
         />
       </View>
     </View>
-    <Divider/>
+    <Divider />
   </View>
     // <View styles={styles.container}>
     //   <View style={styles.view3}>

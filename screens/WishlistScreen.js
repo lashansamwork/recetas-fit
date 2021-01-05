@@ -97,10 +97,11 @@ const WishlistScreen = () => {
 
   const renderItem = ({ item }) => {
     return (
-
+      // FLATLIST ITEM
       <WishlistItem
         title={item.title}
-        quantity={item.quantity}
+        img={item.img}
+        link={item.link}
         id={item.id}
         onDeletePressed={onDeletePressed}
       />
@@ -114,17 +115,31 @@ const WishlistScreen = () => {
   };
 
   const filteredSearchItemPress = (newItem) => {
-    let itemToAdd = [];
-    let lenghtAdder = 0;
-    newItem.map((element, index) => {
-      lenghtAdder = wishlistArr.length + index;
-      itemToAdd.push({
-        id: lenghtAdder,
-        title: element.name,
-        quantity: element.quantity,
-      })
-    });
-    setWishlistArr([...wishlistArr, ...itemToAdd]);
+    // MAP FUNCTION
+    // let itemToAdd = [];
+    // let lenghtAdder = 0;
+    console.log("🚀 ~ newItem", newItem);
+    
+    // wishlist array = [{id: 1, img: ...., title: .. , link:... },{}  ]
+
+    let newItemToAdd = {
+      id:  wishlistArr.length,
+      title: newItem.title,
+      link: newItem.link,
+      img: newItem.img,
+    }
+
+    setWishlistArr([...wishlistArr, newItemToAdd]);
+    console.log("🚀 ~ wishlistArr", wishlistArr);
+    // newItem.map((element, index) => {
+    //   lenghtAdder = wishlistArr.length + index;
+    //   itemToAdd.push({
+    //     id: lenghtAdder,
+    //     title: element.name,
+    //     quantity: element.quantity,
+    //   })
+    // });
+    // setWishlistArr([...wishlistArr, ...itemToAdd]);
   };
 
   if (loading) {
@@ -165,6 +180,7 @@ const WishlistScreen = () => {
             )}
             {/* <List.Section title="Accordions"> */}
             <List.Accordion title="Alimentación">
+              {/* BUTTON */}
               {alimentacion.map((element, index) => {
                 return (
                 <View  
@@ -177,7 +193,7 @@ const WishlistScreen = () => {
                   <View >
                     <Button
                       color="black"
-                      onPress={() => filteredSearchItemPress(element.recipe)}>
+                      onPress={() => filteredSearchItemPress(element)}>
                       {element.title}
                     </Button>
                   </View>
@@ -196,7 +212,7 @@ const WishlistScreen = () => {
                   <View >
                     <Button
                       color="black"
-                      onPress={() => filteredSearchItemPress(element.recipe)}>
+                      onPress={() => filteredSearchItemPress(element)}>
                       {element.title}
                     </Button>
                   </View>
@@ -215,7 +231,7 @@ const WishlistScreen = () => {
                   <View >
                     <Button
                       color="black"
-                      onPress={() => filteredSearchItemPress(element.recipe)}>
+                      onPress={() => filteredSearchItemPress(element)}>
                       {element.title}
                     </Button>
                   </View>
@@ -234,7 +250,7 @@ const WishlistScreen = () => {
                   <View >
                     <Button
                       color="black"
-                      onPress={() => filteredSearchItemPress(element.recipe)}>
+                      onPress={() => filteredSearchItemPress(element)}>
                       {element.title}
                     </Button>
                   </View>
@@ -253,7 +269,7 @@ const WishlistScreen = () => {
                   <View >
                     <Button
                       color="black"
-                      onPress={() => filteredSearchItemPress(element.recipe)}>
+                      onPress={() => filteredSearchItemPress(element)}>
                       {element.title}
                     </Button>
                   </View>
@@ -272,7 +288,7 @@ const WishlistScreen = () => {
                   <View >
                     <Button
                       color="black"
-                      onPress={() => filteredSearchItemPress(element.recipe)}>
+                      onPress={() => filteredSearchItemPress(element)}>
                       {element.title}
                     </Button>
                   </View>
@@ -291,7 +307,7 @@ const WishlistScreen = () => {
                   <View >
                     <Button
                       color="black"
-                      onPress={() => filteredSearchItemPress(element.recipe)}>
+                      onPress={() => filteredSearchItemPress(element)}>
                       {element.title}
                     </Button>
                   </View>
@@ -313,6 +329,7 @@ const WishlistScreen = () => {
       </Modal>
 
       <View style={{ flexGrow: 1 }}>
+        {/* FLATLIST */}
         <FlatList
           ListEmptyComponent={
             <View style={{ alignItems: 'center' }}>
