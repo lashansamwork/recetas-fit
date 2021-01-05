@@ -172,7 +172,7 @@ const WishlistScreen = () => {
                   style={{ paddingVertical: layout.padding.medium, flex: 1, flexDirection: 'row' }}>
                     <View style={{padding: 15}}></View>
                     <View style={{ alignSelf: 'center' }} >
-                    <Avatar.Image size={24} source={element.img} />
+                    <Avatar.Image size={28} source={element.img} />
                   </View>
                   <View >
                     <Button
@@ -191,7 +191,7 @@ const WishlistScreen = () => {
                   style={{ paddingVertical: layout.padding.medium, flex: 1, flexDirection: 'row' }}>
                     <View style={{padding: 15}}></View>
                   <View style={{ alignSelf: 'center' }} >
-                    <Avatar.Image size={24} source={element.img} />
+                    <Avatar.Image size={28} source={element.img} />
                   </View>
                   <View >
                     <Button
@@ -210,7 +210,7 @@ const WishlistScreen = () => {
                   style={{ paddingVertical: layout.padding.medium, flex: 1, flexDirection: 'row' }}>
                     <View style={{padding: 15}}></View>
                   <View style={{ alignSelf: 'center' }} >
-                    <Avatar.Image size={24} source={element.img} />
+                    <Avatar.Image size={28} source={element.img} />
                   </View>
                   <View >
                     <Button
@@ -229,7 +229,7 @@ const WishlistScreen = () => {
                   style={{ paddingVertical: layout.padding.medium, flex: 1, flexDirection: 'row' }}>
                     <View style={{padding: 15}}></View>
                   <View style={{ alignSelf: 'center' }} >
-                    <Avatar.Image size={24} source={element.img} />
+                    <Avatar.Image size={28} source={element.img} />
                   </View>
                   <View >
                     <Button
@@ -248,7 +248,7 @@ const WishlistScreen = () => {
                   style={{ paddingVertical: layout.padding.medium, flex: 1, flexDirection: 'row' }}>
                     <View style={{padding: 15}}></View>
                   <View style={{ alignSelf: 'center' }} >
-                    <Avatar.Image size={24} source={element.img} />
+                    <Avatar.Image size={28} source={element.img} />
                   </View>
                   <View >
                     <Button
@@ -267,7 +267,7 @@ const WishlistScreen = () => {
                   style={{ paddingVertical: layout.padding.medium, flex: 1, flexDirection: 'row' }}>
                     <View style={{padding: 15}}></View>
                   <View style={{ alignSelf: 'center' }} >
-                    <Avatar.Image size={24} source={element.img} />
+                    <Avatar.Image size={28} source={element.img} />
                   </View>
                   <View >
                     <Button
@@ -286,7 +286,7 @@ const WishlistScreen = () => {
                   style={{ paddingVertical: layout.padding.medium, flex: 1, flexDirection: 'row' }}>
                     <View style={{padding: 15}}></View>
                   <View style={{ alignSelf: 'center' }} >
-                    <Avatar.Image size={24} source={element.img} />
+                    <Avatar.Image size={28} source={element.img} />
                   </View>
                   <View >
                     <Button
