@@ -6405,6 +6405,11 @@ react-native-bootsplash@^3.1.2:
     fs-extra "^9.0.1"
     jimp "^0.16.1"
 
+react-native-extra-dimensions-android@^1.2.5:
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/react-native-extra-dimensions-android/-/react-native-extra-dimensions-android-1.2.5.tgz#8ade91029aaac7519bf305116d39019e618a60f0"
+  integrity sha512-eorFo9X1vEqAWUkgcZ300yKBG1wtgNeE7tdWAH2CE+P50FGTniJg5Sr6l1iPWG8ZskQOuF+KeiSTFlDa4vLfMw==
+
 react-native-gesture-handler@^1.9.0:
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-1.9.0.tgz#e441b1c0277c3fd4ca3e5c58fdd681e2f0ceddf0"

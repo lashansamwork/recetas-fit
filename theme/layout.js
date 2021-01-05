@@ -3,7 +3,7 @@ import { Dimensions } from 'react-native';
 
 const deviceHeight = Platform.OS === "ios"
 ? Dimensions.get("window").height
-: 500;
+: require("react-native-extra-dimensions-android").get("REAL_WINDOW_HEIGHT");
 
 const layout = {
     padding:{
