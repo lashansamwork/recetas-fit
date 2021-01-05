@@ -20,6 +20,8 @@ import Modal from 'react-native-modal';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Toast from 'react-native-simple-toast';
 
+import { alimentacion } from '../data/Alimentacion';
+
 const WishlistScreen = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [isShowRecipe, setIsShowRecipe] = useState(false);
@@ -32,14 +34,15 @@ const WishlistScreen = () => {
   const items = [
     {
       title: "pudding1",
+      img: "../assets/imgs/1Gandulesverdes.png",
       recipe:
         [
           { name: "item1", quantity: 1 },
-          { name: "item2", quantity: 2 }
         ],
     },
     {
       title: "pudding2",
+      img: "../assets/imgs/1ChocolateBlanco0%.png",
       recipe:
         [
           { name: "item3", quantity: 3 },
@@ -47,6 +50,8 @@ const WishlistScreen = () => {
         ]
     },
   ];
+
+  
 
   useEffect(() => {
     getWishList();
@@ -149,11 +154,33 @@ const WishlistScreen = () => {
               <View style={{ paddingTop: layout.padding.xxxLarge }}>
                 <Text>
                   no hay resultados coincidentes
-                  </Text>
+                </Text>
               </View>
             )}
             {/* <List.Section title="Accordions"> */}
             <List.Accordion title="Alimentación">
+              {alimentacion.map((element, index) => {
+                let path = element.img;
+                console.log("type of path is ", typeof(path));console.log(" path is ",  path);
+                return (
+                <View  
+                  key={`${index}`}
+                  style={{ paddingVertical: layout.padding.medium, flex: 1, flexDirection: 'row' }}>
+                    <View style={{padding: 15}}></View>
+                    <View style={{ alignSelf: 'center' }} >
+                    <Avatar.Image size={18} source={element.img} />
+                  </View>
+                  <View >
+                    <Button
+                      color="black"
+                      onPress={() => filteredSearchItemPress(element.recipe)}>
+                      {element.title}
+                    </Button>
+                  </View>
+                </View>
+              )})}
+            </List.Accordion>
+            <List.Accordion title="Saborizantes">
               {itemsToDisplay.map((element, index) => (
                 <View  
                   key={`${index}`}
@@ -172,6 +199,102 @@ const WishlistScreen = () => {
                 </View>
               ))}
             </List.Accordion>
+            <List.Accordion title="Salsas">
+              {itemsToDisplay.map((element, index) => (
+                <View  
+                  key={`${index}`}
+                  style={{ paddingVertical: layout.padding.medium, flex: 1, flexDirection: 'row' }}>
+                    <View style={{padding: 15}}></View>
+                  <View style={{ alignSelf: 'center' }} >
+                    <Avatar.Image size={18} source={require('../assets/imgs/1ChocolateBlanco0%.png')} />
+                  </View>
+                  <View >
+                    <Button
+                      color="black"
+                      onPress={() => filteredSearchItemPress(element.recipe)}>
+                      {element.title}
+                    </Button>
+                  </View>
+                </View>
+              ))}
+            </List.Accordion>
+            <List.Accordion title="Topppings">
+              {itemsToDisplay.map((element, index) => (
+                <View  
+                  key={`${index}`}
+                  style={{ paddingVertical: layout.padding.medium, flex: 1, flexDirection: 'row' }}>
+                    <View style={{padding: 15}}></View>
+                  <View style={{ alignSelf: 'center' }} >
+                    <Avatar.Image size={18} source={require('../assets/imgs/1ChocolateBlanco0%.png')} />
+                  </View>
+                  <View >
+                    <Button
+                      color="black"
+                      onPress={() => filteredSearchItemPress(element.recipe)}>
+                      {element.title}
+                    </Button>
+                  </View>
+                </View>
+              ))}
+            </List.Accordion>
+            <List.Accordion title="Suplementación">
+              {itemsToDisplay.map((element, index) => (
+                <View  
+                  key={`${index}`}
+                  style={{ paddingVertical: layout.padding.medium, flex: 1, flexDirection: 'row' }}>
+                    <View style={{padding: 15}}></View>
+                  <View style={{ alignSelf: 'center' }} >
+                    <Avatar.Image size={18} source={require('../assets/imgs/1ChocolateBlanco0%.png')} />
+                  </View>
+                  <View >
+                    <Button
+                      color="black"
+                      onPress={() => filteredSearchItemPress(element.recipe)}>
+                      {element.title}
+                    </Button>
+                  </View>
+                </View>
+              ))}
+            </List.Accordion>
+            <List.Accordion title="Repostería">
+              {itemsToDisplay.map((element, index) => (
+                <View  
+                  key={`${index}`}
+                  style={{ paddingVertical: layout.padding.medium, flex: 1, flexDirection: 'row' }}>
+                    <View style={{padding: 15}}></View>
+                  <View style={{ alignSelf: 'center' }} >
+                    <Avatar.Image size={18} source={require('../assets/imgs/1ChocolateBlanco0%.png')} />
+                  </View>
+                  <View >
+                    <Button
+                      color="black"
+                      onPress={() => filteredSearchItemPress(element.recipe)}>
+                      {element.title}
+                    </Button>
+                  </View>
+                </View>
+              ))}
+            </List.Accordion>
+            <List.Accordion title="Electrodomésticos">
+              {itemsToDisplay.map((element, index) => (
+                <View  
+                  key={`${index}`}
+                  style={{ paddingVertical: layout.padding.medium, flex: 1, flexDirection: 'row' }}>
+                    <View style={{padding: 15}}></View>
+                  <View style={{ alignSelf: 'center' }} >
+                    <Avatar.Image size={18} source={require('../assets/imgs/1ChocolateBlanco0%.png')} />
+                  </View>
+                  <View >
+                    <Button
+                      color="black"
+                      onPress={() => filteredSearchItemPress(element.recipe)}>
+                      {element.title}
+                    </Button>
+                  </View>
+                </View>
+              ))}
+            </List.Accordion>
+           
             {/* </List.Section> */}
           </ScrollView>
 
