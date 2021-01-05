@@ -21,6 +21,12 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import Toast from 'react-native-simple-toast';
 
 import { alimentacion } from '../data/Alimentacion';
+import { electrodomesticos } from '../data/Electrodomesticos';
+import { reposteria } from '../data/Reposteria';
+import { saborizantes } from '../data/Saborizantes';
+import { suplementacion } from '../data/Suplementacion';
+import { salsas } from '../data/Salsas';
+import { toppings } from '../data/Toppings';
 
 const WishlistScreen = () => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -42,7 +48,7 @@ const WishlistScreen = () => {
     },
     {
       title: "pudding2",
-      img: "../assets/imgs/1ChocolateBlanco0%.png",
+      img: "../assets/imgs/1_Gandules_verdes.png",
       recipe:
         [
           { name: "item3", quantity: 3 },
@@ -160,15 +166,13 @@ const WishlistScreen = () => {
             {/* <List.Section title="Accordions"> */}
             <List.Accordion title="Alimentación">
               {alimentacion.map((element, index) => {
-                let path = element.img;
-                console.log("type of path is ", typeof(path));console.log(" path is ",  path);
                 return (
                 <View  
                   key={`${index}`}
                   style={{ paddingVertical: layout.padding.medium, flex: 1, flexDirection: 'row' }}>
                     <View style={{padding: 15}}></View>
                     <View style={{ alignSelf: 'center' }} >
-                    <Avatar.Image size={18} source={element.img} />
+                    <Avatar.Image size={24} source={element.img} />
                   </View>
                   <View >
                     <Button
@@ -181,13 +185,13 @@ const WishlistScreen = () => {
               )})}
             </List.Accordion>
             <List.Accordion title="Saborizantes">
-              {itemsToDisplay.map((element, index) => (
+              {saborizantes.map((element, index) => (
                 <View  
                   key={`${index}`}
                   style={{ paddingVertical: layout.padding.medium, flex: 1, flexDirection: 'row' }}>
                     <View style={{padding: 15}}></View>
                   <View style={{ alignSelf: 'center' }} >
-                    <Avatar.Image size={18} source={require('../assets/imgs/1ChocolateBlanco0%.png')} />
+                    <Avatar.Image size={24} source={element.img} />
                   </View>
                   <View >
                     <Button
@@ -200,13 +204,13 @@ const WishlistScreen = () => {
               ))}
             </List.Accordion>
             <List.Accordion title="Salsas">
-              {itemsToDisplay.map((element, index) => (
+              {salsas.map((element, index) => (
                 <View  
                   key={`${index}`}
                   style={{ paddingVertical: layout.padding.medium, flex: 1, flexDirection: 'row' }}>
                     <View style={{padding: 15}}></View>
                   <View style={{ alignSelf: 'center' }} >
-                    <Avatar.Image size={18} source={require('../assets/imgs/1ChocolateBlanco0%.png')} />
+                    <Avatar.Image size={24} source={element.img} />
                   </View>
                   <View >
                     <Button
@@ -219,13 +223,13 @@ const WishlistScreen = () => {
               ))}
             </List.Accordion>
             <List.Accordion title="Topppings">
-              {itemsToDisplay.map((element, index) => (
+              {toppings.map((element, index) => (
                 <View  
                   key={`${index}`}
                   style={{ paddingVertical: layout.padding.medium, flex: 1, flexDirection: 'row' }}>
                     <View style={{padding: 15}}></View>
                   <View style={{ alignSelf: 'center' }} >
-                    <Avatar.Image size={18} source={require('../assets/imgs/1ChocolateBlanco0%.png')} />
+                    <Avatar.Image size={24} source={element.img} />
                   </View>
                   <View >
                     <Button
@@ -238,13 +242,13 @@ const WishlistScreen = () => {
               ))}
             </List.Accordion>
             <List.Accordion title="Suplementación">
-              {itemsToDisplay.map((element, index) => (
+              {suplementacion.map((element, index) => (
                 <View  
                   key={`${index}`}
                   style={{ paddingVertical: layout.padding.medium, flex: 1, flexDirection: 'row' }}>
                     <View style={{padding: 15}}></View>
                   <View style={{ alignSelf: 'center' }} >
-                    <Avatar.Image size={18} source={require('../assets/imgs/1ChocolateBlanco0%.png')} />
+                    <Avatar.Image size={24} source={element.img} />
                   </View>
                   <View >
                     <Button
@@ -257,13 +261,13 @@ const WishlistScreen = () => {
               ))}
             </List.Accordion>
             <List.Accordion title="Repostería">
-              {itemsToDisplay.map((element, index) => (
+              {reposteria.map((element, index) => (
                 <View  
                   key={`${index}`}
                   style={{ paddingVertical: layout.padding.medium, flex: 1, flexDirection: 'row' }}>
                     <View style={{padding: 15}}></View>
                   <View style={{ alignSelf: 'center' }} >
-                    <Avatar.Image size={18} source={require('../assets/imgs/1ChocolateBlanco0%.png')} />
+                    <Avatar.Image size={24} source={element.img} />
                   </View>
                   <View >
                     <Button
@@ -276,13 +280,13 @@ const WishlistScreen = () => {
               ))}
             </List.Accordion>
             <List.Accordion title="Electrodomésticos">
-              {itemsToDisplay.map((element, index) => (
+              {electrodomesticos.map((element, index) => (
                 <View  
                   key={`${index}`}
                   style={{ paddingVertical: layout.padding.medium, flex: 1, flexDirection: 'row' }}>
                     <View style={{padding: 15}}></View>
                   <View style={{ alignSelf: 'center' }} >
-                    <Avatar.Image size={18} source={require('../assets/imgs/1ChocolateBlanco0%.png')} />
+                    <Avatar.Image size={24} source={element.img} />
                   </View>
                   <View >
                     <Button
