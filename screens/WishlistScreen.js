@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, StyleSheet, ScrollView } from 'react-native';
+import { View, StyleSheet, ScrollView, Dimensions } from 'react-native';
 import ActionButton from 'react-native-action-button';
 import { FlatList } from 'react-native-gesture-handler';
 import Colors from '../theme/colors';
@@ -151,25 +151,28 @@ const WishlistScreen = () => {
     );
   }
   return (
-    <View style={{ flex: 1, padding: layout.padding.xxxLarge }}>
+    <View style={{ flex: 1, padding: layout.padding.xxxLarge}}>
       <Modal
         isVisible={modalVisible}
         onBackdropPress={() => setModalVisible(false)}
-        avoidKeyboard={true}>
+        avoidKeyboard={true}
+        >
         <View
+          
           style={{
             backgroundColor: 'white',
             borderRadius: layout.radius.image,
             padding: layout.padding.large,
+            height: layout.autoHeight.xxxLarge,
           }}>
           <Title>Recitas</Title>
 
-          <Searchbar
+          {/* <Searchbar
             placeholder="Buscar"
             onChangeText={onChangeSearch}
             value={searchQuery}
             style={{ marginTop: layout.padding.xxxLarge }}
-          />
+          /> */}
 
           <ScrollView style={{ paddingVertical: layout.padding.xxxLarge }}>
             {!filteredItems.length && (
@@ -321,10 +324,8 @@ const WishlistScreen = () => {
 
           <Button
             mode="outlined"
-            onPress={() => {
-              setIsShowRecipe(false);
-            }}>
-            agregar elementos personalizados
+            onPress={() => setModalVisible(false)}>
+              cancelar
             </Button>
         </View>
       </Modal>
