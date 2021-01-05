@@ -11,7 +11,7 @@ import Layout from '../../theme/layout'
 
 const Stack = createStackNavigator();
 
-function WishListStack() {
+function NotesStack() {
 
     const getHeaderOptions = useCallback((navigation) => {
         const options = {
@@ -43,4 +43,4 @@ function WishListStack() {
     </Stack.Navigator>);
 }
 
-export default WishListStack;
+export default NotesStack;

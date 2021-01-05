@@ -17,10 +17,10 @@ import Modal from 'react-native-modal';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Toast from 'react-native-simple-toast';
 
-const WishlistScreen = () => {
+const NotesScreen = () => {
 	const [modalVisible, setModalVisible] = useState(false);
 	const [loading, setLoading] = useState(true);
-	const [wishlistArr, setWishlistArr] = useState([]);
+	const [notesArr, setNotesArr] = useState([]);
 	const [itemName, setItemName] = useState(null);
 	const [itemQuantity, setItemQuantity] = useState(null);
 
@@ -31,13 +31,13 @@ const WishlistScreen = () => {
 	}, []);
 
 	useEffect(() => {
-		if (wishlistArr) {
+		if (notesArr) {
 			setWishList();
 		}
-	}, [wishlistArr]);
+	}, [notesArr]);
 
 	const setWishList = async () => {
-		const jsonValue = JSON.stringify(wishlistArr);
+		const jsonValue = JSON.stringify(notesArr);
 		AsyncStorage.setItem('@wishList', jsonValue);
 	};
 
@@ -45,7 +45,7 @@ const WishlistScreen = () => {
 		const wishListJson = await AsyncStorage.getItem('@wishList');
 		const wishListData = wishListJson != null ? JSON.parse(wishListJson) : null;
 		if (wishListData) {
-			setWishlistArr(wishListData);
+			setNotesArr(wishListData);
 		}
 		setTimeout(() => {
 			setLoading(false);
@@ -64,8 +64,8 @@ const WishlistScreen = () => {
 	};
 
 	const onDeletePressed = (id) => {
-		const updatedWishList = wishlistArr.filter((item) => item.id !== id);
-		setWishlistArr(updatedWishList);
+		const updatedWishList = notesArr.filter((item) => item.id !== id);
+		setNotesArr(updatedWishList);
 	};
 
 
@@ -90,12 +90,6 @@ const WishlistScreen = () => {
 					}}>
 					<Title>Añadir notas</Title>
 					<View style={{ paddingTop: layout.padding.medium }} />
-					<TextInput
-						// value={}
-						mode="outlined"
-						label="Nombre del árticulo"
-						// onChangeText={(val/zz
-					/>
 					<View style={{ paddingTop: layout.padding.medium }} />
 					<TextInput
 						mode="outlined"
@@ -115,7 +109,7 @@ const WishlistScreen = () => {
 							<Button
 								mode="contained"
 								onPress={() => {
-									const wishListArrayLength = wishlistArr.length;
+									const wishListArrayLength = notesArr.length;
 
 									if (!itemName) {
 										Toast.show('El nombre no puede estar vacío');
@@ -133,7 +127,7 @@ const WishlistScreen = () => {
 
 									setItemName('');
 									setItemQuantity('');
-									setWishlistArr([...wishlistArr, itemToAdd]);
+									setNotesArr([...notesArr, itemToAdd]);
 									setModalVisible(false);
 								}}>
 								Añadir
@@ -150,7 +144,7 @@ const WishlistScreen = () => {
 							<Subheading>Tu lista esta vacia</Subheading>
 						</View>
 					}
-					data={wishlistArr}
+					data={notesArr}
 					renderItem={renderItem}
 					keyExtractor={(item, index) => {
 						return `${index}`;
@@ -167,4 +161,4 @@ const WishlistScreen = () => {
 	);
 };
 
-export default WishlistScreen;
+export default NotesScreen;
