@@ -130,6 +130,7 @@ const WishlistScreen = () => {
     }
 
     setWishlistArr([...wishlistArr, newItemToAdd]);
+    Toast.show('Elemento agregado', 0.3);
     console.log("🚀 ~ wishlistArr", wishlistArr);
     // newItem.map((element, index) => {
     //   lenghtAdder = wishlistArr.length + index;

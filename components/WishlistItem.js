@@ -5,28 +5,29 @@ import Layout from "../theme/layout"
 
 const WishlistItem = ({ id, title, link, img, onDeletePressed }) => {
   return (<View>
-    <View style={{ flexDirection: 'row', flex: 1, alignItems: 'center' }}>
-      <View style={{ flex: 0.5}}>
+    <View style={{ flexDirection: 'row', flexShrink: 1, alignItems: 'center' }}>
+      <View style={{ flex: 0.5 }}>
         <Avatar.Image size={28} source={img} />
       </View>
-      <View style={{ flex: 1 }}>
-        
+      <View style={{ flexGrow: 1 }}>
+
         <List.Item
           title={title}
         />
       </View>
-      <View >
-      <IconButton
-          icon="camera"
-          color={Colors.red500}
+      <View style={{ flexShrink: 1 }}>
+        <IconButton
+          icon="arrow-top-right-thick"
+          color={Colors.redA400}
           size={20}
           onPress={() => Linking.openURL(link)}
         />
       </View>
-      <View style={{ flex: 1 }}>
-        <List.Item
+      <View style={{ flexShrink: 1 }}>
+        <Button icon="trash-can-outline" onPress={() => { onDeletePressed(id) }} color={Colors.brown900}/>
+        {/* <List.Item
           right={props => <Button mode="text" onPress={() => { onDeletePressed(id) }}>DELETE</Button>}
-        />
+        /> */}
       </View>
     </View>
     <Divider />
