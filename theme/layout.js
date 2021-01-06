@@ -21,6 +21,11 @@ const layout = {
       large: deviceHeight*0.6,
       xxxLarge: deviceHeight*0.8,
     },
+    fontSizes: {
+      small: 10,
+      medium: 16, 
+      large: 20,
+    }
   };
   
   export default layout;

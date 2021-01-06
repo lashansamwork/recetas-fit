@@ -8,7 +8,7 @@ const NotesItems = ({ id, note, onDeletePressed }) => {
     <View style={{ flexDirection: 'column', flexShrink: 1, alignItems: 'center' }}>
       <View style={{ padding: Layout.padding.large }} ></View>
       <View style={{ flexGrow: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>{note}</Text>
+        <Text style={{ fontSize: Layout.fontSizes.medium, fontStyle: 'italic' }}>{note}</Text>
       </View>
 
       <View style={{ flexShrink: 1 }}>
