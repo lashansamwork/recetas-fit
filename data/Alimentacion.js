@@ -8,12 +8,12 @@ export const alimentacion =
     },
     {
         title: 'Chocolate Blanco 0%', 
-        img: require('../assets/imgs/1_Chocolate_Blanco_0%.png'),
+        img: require('../assets/imgs/1_Chocolate_Blanco_0.png'),
         link: 'https://bit.ly/3h5ycY3',
     },
     {
         title: 'Chocolate con leche 0%',  
-        img: require('../assets/imgs/1_Chocolate_con_leche_0%.png'),
+        img: require('../assets/imgs/1_Chocolate_con_leche_0.png'),
  
         link: 'http://bit.ly/3aJRQb9',
     },

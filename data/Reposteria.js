@@ -2,7 +2,7 @@ export const reposteria =
 [
     {
         title: 'Cola Cao 0%', 
-        img: require('../assets/imgs/6_Cola_Cao_0%.png'),
+        img: require('../assets/imgs/6_Cola_Cao_0.png'),
         
         link: 'https://amzn.to/37AvmHD',
     },
