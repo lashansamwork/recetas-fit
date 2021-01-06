@@ -86,6 +86,7 @@ const NotesScreen = () => {
 						mode="outlined"
 						label="Tu nota"
 						onChangeText={(val) => setItemName(val)}
+						multiline style={{ height: 200 }}
 					/>
 					<View
 						style={{ flexDirection: 'row', paddingTop: layout.padding.large }}>
