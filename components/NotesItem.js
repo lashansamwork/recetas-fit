@@ -1,25 +1,28 @@
 import React from 'react';
 import { View, Linking, StyleSheet } from 'react-native';
-import { List, Divider, Button, Avatar, IconButton, Colors, Text } from 'react-native-paper';
+import { List, Divider, Button, Avatar, IconButton, Colors, Text, Card, Title, Paragraph } from 'react-native-paper';
 import Layout from "../theme/layout"
 
 const NotesItems = ({ id, note, onDeletePressed }) => {
-  return (<View>
-    <View style={{ flexDirection: 'column', flexShrink: 1, alignItems: 'center' }}>
-      <View style={{ padding: Layout.padding.large }} ></View>
-      <View style={{ flexGrow: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text style={{ fontSize: Layout.fontSizes.medium, fontStyle: 'italic' }}>{note}</Text>
+  return (
+    <View>
+      <View style={{ flexDirection: 'column', flex: 1, alignItems: 'center', }}>
+        <View style={{ padding: Layout.padding.large, }} ></View>
+        <View style={{ flexGrow: 1, width: '100%', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', }}>
+          <Card style={{ width: '100%', alignItems: 'center' }}>
+            <Card.Content>
+              <Paragraph style={{ alignSelf: 'center' }}>{note}</Paragraph>
+            </Card.Content>
+            <Card.Actions>
+              <Button onPress={ () => { onDeletePressed(id) }}>
+                Borrar nota
+              </Button>
+            </Card.Actions>
+          </Card>
+        </View>
       </View>
-
-      <View style={{ flexShrink: 1 }}>
-        <Button icon="trash-can-outline" onPress={() => { onDeletePressed(id) }} color={Colors.brown900}>
-          borrar nota
-        </Button>
-      </View>
-
+      <Divider />
     </View>
-    <Divider />
-  </View>
   );
 };
 

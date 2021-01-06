@@ -26,7 +26,6 @@ const NotesScreen = () => {
 	useEffect(() => {
 		getNotesList();
 	}, []);
-
 	useEffect(() => {
 		if (notesArr) {
 			setNotesList();
@@ -37,7 +36,6 @@ const NotesScreen = () => {
 		const jsonValue = JSON.stringify(notesArr);
 		AsyncStorage.setItem('@notesList', jsonValue);
 	};
-
 	const getNotesList = async () => {
 		const notesListJson = await AsyncStorage.getItem('@notesList');
 		const notesListData = notesListJson != null ? JSON.parse(notesListJson) : null;
@@ -48,11 +46,7 @@ const NotesScreen = () => {
 			setLoading(false);
 		}, 1000);
 	};
-
 	const renderItem = ({ item }) => {
-   
-		console.log("🚀 ~ file: NotesScreen.js ~ line 53 ~ renderItem ~ item.note 👉", item)
-		
 		return (
 			<NotesItem
 				note={item.note}
@@ -61,12 +55,10 @@ const NotesScreen = () => {
 			/>
 		);
 	};
-
 	const onDeletePressed = (id) => {
 		const updatedNoteList = notesArr.filter((item) => item.id !== id);
 		setNotesArr(updatedNoteList);
 	};
-
 
 	if (loading) {
 		return (
@@ -92,7 +84,7 @@ const NotesScreen = () => {
 					<View style={{ paddingTop: layout.padding.medium }} />
 					<TextInput
 						mode="outlined"
-						label="Cantidad"
+						label="Tu nota"
 						onChangeText={(val) => setItemName(val)}
 					/>
 					<View
@@ -102,36 +94,26 @@ const NotesScreen = () => {
 								Cancelar
 							</Button>
 						</View>
-
 						<View style={{ flex: 0.2 }} />
 						<View style={{ flex: 1 }}>
 							<Button
 								mode="contained"
 								onPress={() => {
 									const notesListArrayLength = notesArr.length;
-
 									if (!itemName) {
 										Toast.show('La nota no puede estar vacía');
 										return;
 									} 
-
 									let itemToAdd = {
 										id: notesListArrayLength,
 										note: itemName,
-										
 									};
-
 									setItemName('');
 									setNotesArr([...notesArr, itemToAdd]);
 									setModalVisible(false);
-									
-                                    console.log("🚀 ~ file: NotesScreen.js ~ line 123 ~ NotesScreen ~ notesArr", notesArr)
-
-
-									
 								}}>
 								Añadir
-                                    </Button>
+                            </Button>
 						</View>
 					</View>
 				</View>
