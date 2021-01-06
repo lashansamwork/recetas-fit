@@ -11,7 +11,7 @@ import {
 	ActivityIndicator,
 	Subheading,
 } from 'react-native-paper';
-import WishlistItem from '../components/WishlistItem';
+import NotesItem from '../components/NotesItem';
 import layout from '../theme/layout';
 import Modal from 'react-native-modal';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -22,30 +22,27 @@ const NotesScreen = () => {
 	const [loading, setLoading] = useState(true);
 	const [notesArr, setNotesArr] = useState([]);
 	const [itemName, setItemName] = useState(null);
-	const [itemQuantity, setItemQuantity] = useState(null);
-
-
 
 	useEffect(() => {
-		getWishList();
+		getNotesList();
 	}, []);
 
 	useEffect(() => {
 		if (notesArr) {
-			setWishList();
+			setNotesList();
 		}
 	}, [notesArr]);
 
-	const setWishList = async () => {
+	const setNotesList = async () => {
 		const jsonValue = JSON.stringify(notesArr);
-		AsyncStorage.setItem('@wishList', jsonValue);
+		AsyncStorage.setItem('@notesList', jsonValue);
 	};
 
-	const getWishList = async () => {
-		const wishListJson = await AsyncStorage.getItem('@wishList');
-		const wishListData = wishListJson != null ? JSON.parse(wishListJson) : null;
-		if (wishListData) {
-			setNotesArr(wishListData);
+	const getNotesList = async () => {
+		const notesListJson = await AsyncStorage.getItem('@notesList');
+		const notesListData = notesListJson != null ? JSON.parse(notesListJson) : null;
+		if (notesListData) {
+			setNotesArr(notesListData);
 		}
 		setTimeout(() => {
 			setLoading(false);
@@ -53,10 +50,12 @@ const NotesScreen = () => {
 	};
 
 	const renderItem = ({ item }) => {
+   
+		console.log("🚀 ~ file: NotesScreen.js ~ line 53 ~ renderItem ~ item.note 👉", item)
+		
 		return (
-			<WishlistItem
-				title={item.title}
-				quantity={item.quantity}
+			<NotesItem
+				note={item.note}
 				id={item.id}
 				onDeletePressed={onDeletePressed}
 			/>
@@ -64,8 +63,8 @@ const NotesScreen = () => {
 	};
 
 	const onDeletePressed = (id) => {
-		const updatedWishList = notesArr.filter((item) => item.id !== id);
-		setNotesArr(updatedWishList);
+		const updatedNoteList = notesArr.filter((item) => item.id !== id);
+		setNotesArr(updatedNoteList);
 	};
 
 
@@ -94,7 +93,7 @@ const NotesScreen = () => {
 					<TextInput
 						mode="outlined"
 						label="Cantidad"
-						onChangeText={(val) => setItemQuantity(val)}
+						onChangeText={(val) => setItemName(val)}
 					/>
 					<View
 						style={{ flexDirection: 'row', paddingTop: layout.padding.large }}>
@@ -109,26 +108,27 @@ const NotesScreen = () => {
 							<Button
 								mode="contained"
 								onPress={() => {
-									const wishListArrayLength = notesArr.length;
+									const notesListArrayLength = notesArr.length;
 
 									if (!itemName) {
-										Toast.show('El nombre no puede estar vacío');
+										Toast.show('La nota no puede estar vacía');
 										return;
-									} else if (!itemQuantity) {
-										Toast.show('la cantidad no puede estar vacía');
-										return;
-									}
+									} 
 
 									let itemToAdd = {
-										id: wishListArrayLength,
-										title: itemName,
-										quantity: itemQuantity,
+										id: notesListArrayLength,
+										note: itemName,
+										
 									};
 
 									setItemName('');
-									setItemQuantity('');
 									setNotesArr([...notesArr, itemToAdd]);
 									setModalVisible(false);
+									
+                                    console.log("🚀 ~ file: NotesScreen.js ~ line 123 ~ NotesScreen ~ notesArr", notesArr)
+
+
+									
 								}}>
 								Añadir
                                     </Button>
