@@ -1,21 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import { View, StyleSheet, ScrollView } from 'react-native';
+import { View } from 'react-native';
 import ActionButton from 'react-native-action-button';
 import { FlatList } from 'react-native-gesture-handler';
-import Colors from '../theme/colors';
 import {
 	Button,
 	Title,
-	Text,
 	TextInput,
 	ActivityIndicator,
 	Subheading,
 } from 'react-native-paper';
 import NotesItem from '../components/NotesItem';
-import layout from '../theme/layout';
 import Modal from 'react-native-modal';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Toast from 'react-native-simple-toast';
+import layout from '../theme/layout';
+import colors from '../theme/colors';
 
 const NotesScreen = () => {
 	const [modalVisible, setModalVisible] = useState(false);
@@ -49,12 +48,12 @@ const NotesScreen = () => {
 	const renderItem = ({ item }) => {
 		return (
 			<NotesItem
-				note={item.note}
-				id={item.id}
-				onDeletePressed={onDeletePressed}
+				note={ item.note }
+				id={ item.id }
+				onDeletePressed={ onDeletePressed }
 			/>
 		);
-	};
+	}; 
 	const onDeletePressed = (id) => {
 		const updatedNoteList = notesArr.filter((item) => item.id !== id);
 		setNotesArr(updatedNoteList);
@@ -63,7 +62,7 @@ const NotesScreen = () => {
 	if (loading) {
 		return (
 			<View style={{ flex: 1, padding: layout.padding.xxxLarge }}>
-				<ActivityIndicator animating={true} color={Colors.accent} />
+				<ActivityIndicator animating={ true } color={ colors.themeLightColors.primary } />
 			</View>
 		);
 	}
@@ -71,11 +70,11 @@ const NotesScreen = () => {
 		<View style={{ flex: 1, padding: layout.padding.xxxLarge }}>
 			<Modal
 				isVisible={modalVisible}
-				onBackdropPress={() => setModalVisible(false)}
-				avoidKeyboard={true}>
+				onBackdropPress={ () => setModalVisible(false) }
+				avoidKeyboard={ true }>
 				<View
 					style={{
-						backgroundColor: 'white',
+						backgroundColor: colors.themeLightColors.background,
 						borderRadius: layout.radius.image,
 						padding: layout.padding.large,
 					}}>
@@ -86,7 +85,7 @@ const NotesScreen = () => {
 						mode="outlined"
 						label="Tu nota"
 						onChangeText={(val) => setItemName(val)}
-						multiline style={{ height: 200 }}
+						multiline style={{ height:layout.heights.medium }}
 					/>
 					<View
 						style={{ flexDirection: 'row', paddingTop: layout.padding.large }}>
@@ -119,7 +118,6 @@ const NotesScreen = () => {
 					</View>
 				</View>
 			</Modal>
-
 			<View style={{ flexGrow: 1 }}>
 				<FlatList
 					ListEmptyComponent={
@@ -135,8 +133,8 @@ const NotesScreen = () => {
 				/>
 			</View>
 			<ActionButton
-				buttonColor="rgba(231,76,60,1)"
-				title="Add"
+				buttonColor= { colors.themeLightColors.primary }
+				title="Añadir"
 				useNativeFeedback={true}
 				onPress={() => setModalVisible(true)}
 			/>

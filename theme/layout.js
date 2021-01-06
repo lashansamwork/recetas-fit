@@ -25,6 +25,11 @@ const layout = {
       small: 10,
       medium: 16, 
       large: 20,
+    },
+    heights: {
+      short: 100,
+      medium: 200,
+      tall: 300,
     }
   };
   

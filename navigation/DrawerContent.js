@@ -36,7 +36,6 @@ function DrawerContent(props) {
                     label="Indice"
                     active={false}
                     onPress={() => {
-                        console.log('state printing', state);
                         props.navigation.navigate('Cocina Anabólica');
                         changePage(2);
                         props.navigation.closeDrawer();
