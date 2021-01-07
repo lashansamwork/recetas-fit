@@ -232,7 +232,9 @@ const WishlistScreen = () => {
                 </View>
               ))}
             </List.Accordion>
+            <View style={{padding: layout.padding.xxxLarge }}></View>
           </ScrollView>
+          
           <Button
             mode="outlined"
             onPress={() => setModalVisible(false)}>
