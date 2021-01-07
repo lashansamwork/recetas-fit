@@ -36,7 +36,6 @@ function DrawerContent(props) {
                     label="Indice"
                     active={false}
                     onPress={() => {
-                        console.log('state printing', state);
                         props.navigation.navigate('Cocina Anabólica');
                         changePage(2);
                         props.navigation.closeDrawer();
@@ -915,6 +914,12 @@ function DrawerContent(props) {
                 label="Lista de la Compra"
                 focused={focusedRoute.name === "Lista de la Compra"}
                 onPress={() => props.navigation.navigate('Lista de la Compra')}
+                activeTintColor={Colors.themeLightColors.primary}
+            />
+            <DrawerItem
+                label="Notas"
+                focused={focusedRoute.name === "Notas"}
+                onPress={() => props.navigation.navigate('Notas')}
                 activeTintColor={Colors.themeLightColors.primary}
             />
 
