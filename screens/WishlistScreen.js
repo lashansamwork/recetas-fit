@@ -96,7 +96,7 @@ const WishlistScreen = () => {
             padding: layout.padding.large,
             height: layout.autoHeight.xxxLarge,
           }}>
-          <Title>Recitas</Title>
+          <Title>Recetas</Title>
           <ScrollView style={{ paddingVertical: layout.padding.xxxLarge }}>
             <List.Accordion title="Alimentación">
               {alimentacion.map((element, index) => {
