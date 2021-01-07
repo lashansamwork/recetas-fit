@@ -98,7 +98,7 @@ function DrawerContent(props) {
                             }}
                         />
                         <Drawer.Item
-                            label="Un libro para todos. Msj para"
+                            label="Msj: Vegano/Celíaco/Keto"
                             active={false}
                             onPress={() => {
                                 props.navigation.navigate('Cocina Anabólica');
@@ -537,7 +537,7 @@ function DrawerContent(props) {
                             }}
                         />
                         <Drawer.Item
-                            label="Tosta Fit Peanut Butter and Jelly"
+                            label="Tosta Peanut Butter & Jelly"
                             active={false}
                             onPress={() => {
                                 props.navigation.navigate('Cocina Anabólica');
@@ -546,7 +546,7 @@ function DrawerContent(props) {
                             }}
                         />
                         <Drawer.Item
-                            label="Croquetas Fit"
+                            label="Croquetas de Queso"
                             active={false}
                             onPress={() => {
                                 props.navigation.navigate('Cocina Anabólica');
