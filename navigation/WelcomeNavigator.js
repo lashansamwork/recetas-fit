@@ -23,8 +23,8 @@ function WelcomeNavigator() {
   }, [])
 
   return (
-    <Stack.Navigator initialRouteName="Recetas Fit">
-      <Stack.Screen name="Recetas Fit" component={WelcomeScreen} options={getHeaderOptions} />
+    <Stack.Navigator initialRouteName="CocinaSquatFit">
+      <Stack.Screen name="CocinaSquatFit" component={WelcomeScreen} options={getHeaderOptions} />
       <Stack.Screen name="Validation" component={HomeScreen} options={getHeaderOptions} />
     </Stack.Navigator>
   );
