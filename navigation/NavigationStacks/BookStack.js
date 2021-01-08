@@ -38,8 +38,8 @@ function BookStack() {
 
 
 
-  return (<Stack.Navigator initialRouteName="Cocina Anabólica">
-      <Stack.Screen name="Cocina Anabólica" component={BookScreen} options={({ navigation })=>getHeaderOptions(navigation)}/>
+  return (<Stack.Navigator initialRouteName="La Cocina Squat Fit">
+      <Stack.Screen name="La Cocina Squat Fit" component={BookScreen} options={({ navigation })=>getHeaderOptions(navigation)}/>
     </Stack.Navigator>);
 }
 
