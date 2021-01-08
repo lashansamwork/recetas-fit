@@ -98,7 +98,7 @@ function DrawerContent(props) {
                             }}
                         />
                         <Drawer.Item
-                            label="Un libro para todos. Msj para"
+                            label="Msj: Vegano/Celíaco/Keto"
                             active={false}
                             onPress={() => {
                                 props.navigation.navigate('Cocina Anabólica');
@@ -537,7 +537,7 @@ function DrawerContent(props) {
                             }}
                         />
                         <Drawer.Item
-                            label="Tosta Fit Peanut Butter and Jelly"
+                            label="Tosta Peanut Butter & Jelly"
                             active={false}
                             onPress={() => {
                                 props.navigation.navigate('Cocina Anabólica');
@@ -546,7 +546,7 @@ function DrawerContent(props) {
                             }}
                         />
                         <Drawer.Item
-                            label="Croquetas Fit"
+                            label="Croquetas de Queso"
                             active={false}
                             onPress={() => {
                                 props.navigation.navigate('Cocina Anabólica');
@@ -905,10 +905,37 @@ function DrawerContent(props) {
                         />
                     </List.Accordion>
                     {/* end */}
-
-
+                    <List.Accordion title="Cierre" id="11" titleStyle={{ fontSize: 15 }}>
+                        <Drawer.Item
+                            label="Cierre"
+                            active={false}
+                            onPress={() => {
+                                props.navigation.navigate('Cocina Anabólica');
+                                changePage(162);
+                                props.navigation.closeDrawer();
+                            }}
+                        />
+                        <Drawer.Item
+                            label="Agradecimientos"
+                            active={false}
+                            onPress={() => {
+                                props.navigation.navigate('Cocina Anabólica');
+                                changePage(163);
+                                props.navigation.closeDrawer();
+                            }}
+                        />
+                        <Drawer.Item
+                            label="Consideraciones legales"
+                            active={false}
+                            onPress={() => {
+                                props.navigation.navigate('Cocina Anabólica');
+                                changePage(164);
+                                props.navigation.closeDrawer();
+                            }}
+                        />
+                    </List.Accordion>
+                    {/* end */}
                 </List.AccordionGroup>
-
             </View>
             <DrawerItem
                 label="Lista de la Compra"
