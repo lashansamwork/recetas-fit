@@ -37,7 +37,7 @@ function BookScreen() {
   const previousPage = (pageNo) => {
     pdfRef.current.setPage(pageNo - 1);
   };
-  const source = require('../assets/RecetasFit.pdf');
+  const source = {uri:'bundle-assets://pdf/RecetasFit.pdf', cache: true};
   return (
     <View style={styles.container}>
       <View style={styles.view1}>
