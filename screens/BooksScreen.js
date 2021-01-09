@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { View, Dimensions, StyleSheet, Text, Linking } from 'react-native';
+import { View, Dimensions, StyleSheet, Text, Linking, Platform } from 'react-native';
 import { Appbar, Paragraph, Button } from 'react-native-paper';
 import Pdf from 'react-native-pdf';
 import Colors from '../theme/colors';
@@ -37,7 +37,8 @@ function BookScreen() {
   const previousPage = (pageNo) => {
     pdfRef.current.setPage(pageNo - 1);
   };
-  const source = {uri:'bundle-assets://pdf/RecetasFit.pdf', cache: true};
+
+  const source = Platform.OS==='ios'? require('../assets/RecetasFit.pdf') : {uri:'bundle-assets://pdf/RecetasFit.pdf', cache: true};
   return (
     <View style={styles.container}>
       <View style={styles.view1}>
