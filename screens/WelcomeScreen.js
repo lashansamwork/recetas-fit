@@ -12,7 +12,7 @@ import {
 function WelcomeScreen({navigation}) {
 
   function onContinueBtnFn() {
-    navigation.navigate('Validation');
+    navigation.replace('HomeNavigator');
   }
 
   return (
