@@ -3,6 +3,7 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import HomeNavigator from './HomeNavigator';
 import WelcomeNavigator from './WelcomeNavigator';
+import InfoNavigator from './InfoNavigator';
 import {AuthContext} from '../context-store/AuthContextProvider';
 const Stack = createStackNavigator();
 
@@ -17,6 +18,7 @@ function PrimaryNavigator() {
       }}>
       <Stack.Screen name="WelcomeNavigator" component={WelcomeNavigator} />
       <Stack.Screen name="HomeNavigator" component={HomeNavigator} />
+      <Stack.Screen name="InfoNavigator" component={InfoNavigator} />
     </Stack.Navigator>
   );
 }

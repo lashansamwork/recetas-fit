@@ -1,6 +1,7 @@
 
 import 'react-native-gesture-handler';
 import React from 'react';
+import { View } from 'react-native';
 import Colors from "../theme/colors"
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import DrawerContent from './DrawerContent'
